@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Inter", sans-serif;
+    min-height: 100vh;
+  }
+
+  .logo {
+    filter: invert(45%) sepia(32%) saturate(355%) hue-rotate(68deg)
+      brightness(97%) contrast(94%);
+  }
+}

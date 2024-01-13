@@ -14,7 +14,7 @@
     <div>
       <router-link
         :to="items.path"
-        class="font-md text-[1.1rem] px-3 font-medium tracking-tighter"
+        class="font-md text-[1.1rem] px-3 font-medium tracking-tighter text-[#222]"
         v-for="items in links"
         :key="items"
       >

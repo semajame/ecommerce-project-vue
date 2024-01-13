@@ -1,13 +1,5 @@
-<template>
-  <Header />
-</template>
+<template></template>
 
-<script setup>
-import Header from "@/components/Header.vue";
-
-const components = {
-  Header,
-};
-</script>
+<script setup></script>
 
 <style></style>

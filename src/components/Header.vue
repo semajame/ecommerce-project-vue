@@ -29,7 +29,11 @@
           loading="lazy"
         />
       </button>
-      <button @click="console.log('cart clicked')" class="relative">
+      <router-link
+        to="/cart"
+        @click="console.log('cart clicked')"
+        class="relative"
+      >
         <img
           src="https://assets-global.website-files.com/645a69e5ff9a553155774bec/645bd3ee750e2bc9b41edaba_shop.svg"
           alt="Cart Image"
@@ -40,7 +44,7 @@
         >
           0
         </span> -->
-      </button>
+      </router-link>
     </div>
   </header>
 </template>

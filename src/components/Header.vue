@@ -39,10 +39,11 @@
           alt="Cart Image"
           loading="lazy"
         />
+
         <!-- <span
-          class="absolute bg-[#b94e31] text-white font-bold p-1 text-sm rounded-full text-[0.9rem] top-0 z-1 right-0 text-center"
+          class="absolute bg-[#b94e31] text-white font-medium p-1 text-[0.9rem] rounded-full z-1 left-3 bottom-0 text-center h-[22px] w-[22px] flex justify-center items-center"
         >
-          0
+          {{ cartQuantity }}
         </span> -->
       </router-link>
     </div>
@@ -50,6 +51,7 @@
 </template>
 
 <script setup>
+// import { defineProps, ref } from "vue";
 const links = [
   {
     path: "/",
@@ -68,6 +70,13 @@ const links = [
     component: "Contacts",
   },
 ];
+
+// const props = defineProps({
+//   plants: {
+//     type: Array,
+//     required: true,
+//   },
+// });
 </script>
 
 <style></style>

@@ -11,7 +11,11 @@
         v-for="button in buttons"
         :key="button.category"
         class="text-[1.3rem] pointer border-none tracking-[-0.1rem] font-medium text-[#222]"
-        @click="selectCategory(button.category)"
+        @click="selectCategory(button.category), selectButton(button)"
+        :class="{
+          'text-[#5f825c]': button === selectedButton,
+          'text-[#222]': button !== selectedButton,
+        }"
       >
         {{ button.buttonName }}
       </button>
@@ -54,12 +58,25 @@
               ${{ item.price.toFixed(2) }} USD
             </span>
             <div class="my-[1rem] flex justify-between items-center">
-              <input
+              <!-- <input
                 type="text"
-                placeholder="1"
+                value="1"
                 class="p-2 max-w-[80px] border border-light-gray rounded-md outline-none focus:border border-solid focus:border-black"
-                @input="onlyNumber"
-              />
+                @input="onlyNumber($event)"
+                v-model="quantity"
+              /> -->
+              <select
+                name=""
+                id=""
+                v-model="quantity"
+                class="p-2 w-[80px] border border-light-gray rounded-md outline-none focus:border border-solid focus:border-black bg-transparent"
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
 
               <button
                 class="bg-transparent pb-2 border-b border-solid border-black cursor-pointer font-medium hover:text-[#787878] text-lg"
@@ -79,13 +96,26 @@
 import { ref, computed } from "vue";
 
 const selectedCategory = ref("All");
+
 const buttons = [
   { category: "All", buttonName: "All" },
-  { category: "Flowering Plants", buttonName: "Flowering Plants" },
+  {
+    category: "Flowering Plants",
+    buttonName: "Flowering Plants",
+  },
   { category: "Succulents", buttonName: "Succulents" },
-  { category: "Air Purifiers", buttonName: "Air Purifiers" },
-  { category: "Low-Maintenance", buttonName: "Low-Maintenance" },
-  { category: "Indoor Foliage", buttonName: "Indoor Foliage" },
+  {
+    category: "Air Purifiers",
+    buttonName: "Air Purifiers",
+  },
+  {
+    category: "Low-Maintenance",
+    buttonName: "Low-Maintenance",
+  },
+  {
+    category: "Indoor Foliage",
+    buttonName: "Indoor Foliage",
+  },
 ];
 
 const plants = [
@@ -147,6 +177,7 @@ const plants = [
   },
 ];
 
+// FILTER PLANTS
 const filteredPlants = computed(() => {
   if (selectedCategory.value === "All") {
     return plants;
@@ -157,21 +188,50 @@ const filteredPlants = computed(() => {
   }
 });
 
+// BUTTON CATEGORY
 const selectCategory = (category) => {
   selectedCategory.value = category;
 };
 
-const onlyNumber = (event) => {
-  const inputElement = event.target;
-  const numbersOnly = /^\d+$/;
+// BUTTON COLOR
+const selectedButton = ref(null);
 
-  if (!numbersOnly.test(inputElement.value)) {
-    inputElement.value = "";
-  }
+// CART
+
+const cart = [];
+const quantity = ref(1);
+
+const selectButton = (button) => {
+  selectedButton.value = button === selectedButton.value ? null : button;
 };
 
+// ADD TO CART
+const addToCartButton = ref(null);
+
 const addToCart = (item) => {
-  // Add your addToCart logic here
+  let matchingItem;
+
+  const productId = item.id;
+
+  // Iterate through the cart to find a matching item
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
+
+  // If a matching item is found, increment its quantity; otherwise, add a new item to the cart
+  if (matchingItem) {
+    matchingItem.quantity += parseInt(quantity.value);
+  } else {
+    cart.push({
+      productName: item.name,
+      productId: productId,
+      quantity: parseInt(quantity.value),
+    });
+
+    quantity.value = 1;
+  }
 };
 </script>
 

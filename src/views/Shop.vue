@@ -1,95 +1,88 @@
 <template>
   <main class="py-[5rem] px-[4rem]">
     <h1
-      class="text-[4.3rem] tracking-tight font-medium py-[5rem] max-w-[800px] text-[#222]"
+      class="text-[4.3rem] tracking-tight font-medium pt-[5rem] max-w-[800px] text-[#222]"
     >
       Explore our green world
     </h1>
+  </main>
+  <section class="flex gap-[2rem] pb-[5rem] px-[5rem]">
+    <button
+      v-for="button in buttons"
+      :key="button.category"
+      class="text-[1.3rem] pointer border-none tracking-[-0.1rem] font-medium text-[#222]"
+      @click="selectCategory(button.category), selectButton(button)"
+      :class="{
+        'text-[#5f825c]': button === selectedButton,
+        'text-[#222]': button !== selectedButton,
+      }"
+    >
+      {{ button.buttonName }}
+    </button>
+  </section>
 
-    <section class="flex gap-[2rem] mb-[4rem]">
-      <button
-        v-for="button in buttons"
-        :key="button.category"
-        class="text-[1.3rem] pointer border-none tracking-[-0.1rem] font-medium text-[#222]"
-        @click="selectCategory(button.category), selectButton(button)"
-        :class="{
-          'text-[#5f825c]': button === selectedButton,
-          'text-[#222]': button !== selectedButton,
-        }"
-      >
-        {{ button.buttonName }}
-      </button>
-    </section>
-
-    <section>
-      <div
-        class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 place-items-center"
-      >
-        <div
-          v-for="item in filteredPlants"
-          :key="item.id"
-          class="max-w-[350px]"
-        >
-          <div class="w-full">
-            <img
-              :src="item.image"
-              loading="lazy"
-              alt="Product Name"
-              class="w-full object-cover rounded h-[437px]"
-            />
+  <section class="px-[4rem] pb-[4rem]">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 place-items-center"
+    >
+      <div v-for="item in filteredPlants" :key="item.id" class="max-w-[350px]">
+        <div class="w-full">
+          <img
+            :src="item.image"
+            loading="lazy"
+            alt="Product Name"
+            class="w-full object-cover rounded h-[437px]"
+          />
+        </div>
+        <div class="m-[1rem]">
+          <div class="flex justify-between items-center">
+            <h3 class="text-[1.5rem] font-medium text-black tracking-[-0.1rem]">
+              {{ item.name }}
+            </h3>
+            <button>
+              <img
+                src="https://assets.website-files.com/64ed01cfd959df99c0368448/64ef122c8a3b67f03dbd9175_arrow-down-right.svg"
+                loading="lazy"
+                alt="Arrow Image"
+                class="pointer"
+              />
+            </button>
           </div>
-          <div class="m-[1rem]">
-            <div class="flex justify-between items-center">
-              <h3
-                class="text-[1.5rem] font-medium text-black tracking-[-0.1rem]"
-              >
-                {{ item.name }}
-              </h3>
-              <button>
-                <img
-                  src="https://assets.website-files.com/64ed01cfd959df99c0368448/64ef122c8a3b67f03dbd9175_arrow-down-right.svg"
-                  loading="lazy"
-                  alt="Arrow Image"
-                  class="pointer"
-                />
-              </button>
-            </div>
-            <span class="text-[1.2rem] text-[#787878]">
-              ${{ item.price.toFixed(2) }} USD
-            </span>
-            <div class="my-[1rem] flex justify-between items-center">
-              <!-- <input
+          <span class="text-[1.2rem] text-[#787878]">
+            ${{ item.price.toFixed(2) }} USD
+          </span>
+          <div class="my-[1rem] flex justify-between items-center">
+            <!-- <input
                 type="text"
                 value="1"
                 class="p-2 max-w-[80px] border border-light-gray rounded-md outline-none focus:border border-solid focus:border-black"
                 @input="onlyNumber($event)"
                 v-model="quantity"
               /> -->
-              <select
-                name=""
-                id=""
-                v-model="quantity"
-                class="p-2 w-[80px] border border-light-gray rounded-md outline-none focus:border border-solid focus:border-black bg-transparent"
-              >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+            <select
+              name=""
+              id=""
+              v-model="quantity"
+              class="p-2 w-[80px] border border-light-gray rounded-md outline-none focus:border border-solid focus:border-black bg-transparent"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
 
-              <button
-                class="bg-transparent pb-2 border-b border-solid border-black cursor-pointer font-medium hover:text-[#787878] text-lg"
-                @click="addToCart(item)"
-              >
-                Add to Cart
-              </button>
-            </div>
+            <button
+              class="bg-transparent pb-2 border-b border-solid border-black cursor-pointer font-medium hover:text-[#787878] text-lg"
+              @click="addToCart(item)"
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 </template>
 
 <script setup>

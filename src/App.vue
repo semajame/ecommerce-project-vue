@@ -1,13 +1,10 @@
 <template>
   <Header />
-  <router-view :plants="plants" />
+  <router-view :plants="plants" :cart="cart" />
 </template>
 
 <script setup>
 import Header from "./components/Header.vue";
-const components = {
-  Header,
-};
 
 const plants = [
   {
@@ -67,6 +64,8 @@ const plants = [
     category: ["Air Purifiers"],
   },
 ];
+
+const cart = [];
 </script>
 
 <style></style>

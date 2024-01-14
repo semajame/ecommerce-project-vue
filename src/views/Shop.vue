@@ -52,14 +52,7 @@
             ${{ item.price.toFixed(2) }} USD
           </span>
           <div class="my-[1rem] flex justify-between items-center">
-            <!-- <input
-                type="text"
-                value="1"
-                class="p-2 max-w-[80px] border border-light-gray rounded-md outline-none focus:border border-solid focus:border-black"
-                @input="onlyNumber($event)"
-                v-model="quantity"
-              /> -->
-            <select
+            <!-- <select
               name=""
               id=""
               v-model="quantity"
@@ -70,7 +63,7 @@
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
-            </select>
+            </select> -->
 
             <button
               class="bg-transparent pb-2 border-b border-solid border-black cursor-pointer font-medium hover:text-[#787878] text-lg"
@@ -88,6 +81,10 @@
 <script setup>
 import { ref, computed } from "vue";
 import { defineProps } from "vue";
+
+// import { addToCart, cart } from "../components/addToCart";
+
+import { addToCart, cart } from "@/components/addToCart";
 
 const selectedCategory = ref("All");
 
@@ -134,46 +131,5 @@ const filteredPlants = computed(() => {
 // BUTTON CATEGORY
 const selectCategory = (category) => {
   selectedCategory.value = category;
-};
-
-// BUTTON COLOR
-const selectedButton = ref(null);
-
-const selectButton = (button) => {
-  selectedButton.value = button === selectedButton.value ? null : button;
-};
-
-// ADD TO CART
-
-const cart = [];
-const quantity = ref(1);
-
-// const addToCartButton = ref(null);
-
-const addToCart = (item) => {
-  let matchingItem;
-
-  const productId = item.id;
-
-  // Iterate through the cart to find a matching item
-  cart.forEach((cartItem) => {
-    if (productId === cartItem.productId) {
-      matchingItem = cartItem;
-    }
-  });
-
-  // If a matching item is found, increment its quantity; otherwise, add a new item to the cart
-  if (matchingItem) {
-    matchingItem.quantity += parseInt(quantity.value);
-  } else {
-    cart.push({
-      productName: item.name,
-      productId: productId,
-      quantity: parseInt(quantity.value),
-    });
-
-    console.log(cart);
-    quantity.value = 1;
-  }
 };
 </script>

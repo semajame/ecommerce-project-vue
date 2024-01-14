@@ -4,6 +4,7 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import Header from "./components/Header.vue";
 
 const plants = [
@@ -14,6 +15,7 @@ const plants = [
     price: 18,
     id: 1,
     category: ["Flowering Plants", "Low Maintenance"],
+    quantity: 1,
   },
   {
     image:
@@ -22,6 +24,7 @@ const plants = [
     price: 24,
     id: 2,
     category: ["Succulents", "Low-Maintenance"],
+    quantity: 1,
   },
   {
     image:
@@ -30,6 +33,7 @@ const plants = [
     price: 30,
     id: 3,
     category: ["Flowering Plants", "Succulents"],
+    quantity: 1,
   },
   {
     image:
@@ -38,6 +42,7 @@ const plants = [
     price: 18,
     id: 4,
     category: ["Flowering Plants", "Air Purifiers", "Indoor Foliage"],
+    quantity: 1,
   },
   {
     image:
@@ -46,6 +51,7 @@ const plants = [
     price: 30,
     id: 5,
     category: ["Succulents", "Air Purifiers", "Indoor Foliage"],
+    quantity: 1,
   },
   {
     image:
@@ -54,6 +60,7 @@ const plants = [
     price: 24,
     id: 6,
     category: ["Low-Maintenance", "Indoor Foliage"],
+    quantity: 1,
   },
   {
     image:
@@ -62,10 +69,9 @@ const plants = [
     price: 18,
     id: 7,
     category: ["Air Purifiers"],
+    quantity: 1,
   },
 ];
-
-const cart = [];
 </script>
 
 <style></style>

@@ -22,9 +22,10 @@ const addToCart = (item, quantity) => {
     cart.push({
       productImage: item.image,
       productName: item.name,
-      productPrice: item.price,
+      productPrice: item.price.value,
       productId: item.id,
-      productQuantity: item.quantity.value,
+      productOriginalPrice: item.originalPrice,
+      productQuantity: item.quantity,
     });
 
     console.log(cart);

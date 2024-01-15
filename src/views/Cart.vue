@@ -36,7 +36,7 @@
                 </button>
                 <!-- <input type="text" readonly v-model="item.quantity" /> -->
                 <div>
-                  {{ item.productQuantity }}
+                  {{ item.productQuantity.value }}
                 </div>
                 <button
                   class="border p-1 text-bold rounded-full w-[30px] h-[30px] flex justify-center items-center"
@@ -74,30 +74,40 @@
 </template>
 
 <script setup>
-import { defineProps, defineComponent } from "vue";
-import { ref } from "vue";
+import { defineProps } from "vue";
+// import { ref } from "vue";
 
 import { cart } from "@/components/addToCart";
 
 const incrementCount = (item) => {
-  item.productQuantity++;
-  console.log("increment", item.productQuantity);
+  item.productQuantity.value++;
+
+  let totalPrice = item.productPrice + item.productOriginalPrice;
+
+  item.productPrice = totalPrice;
+  // console.log("increment", item.productQuantity.value);
 };
+
+const props = defineProps({
+  plants: {
+    type: Array,
+    required: true,
+  },
+});
 
 const decrementCount = (item) => {
-  if (item.productQuantity === 1) {
-    item.productQuantity = 1;
+  if (item.productQuantity.value === 1) {
+    item.productQuantity.value = 1;
   } else {
-    item.productQuantity--;
+    item.productQuantity.value--;
+    let totalPrice = item.productPrice - item.productOriginalPrice;
+    item.productPrice = totalPrice;
   }
-  console.log("decrement", item.productQuantity);
+
+  console.log("decrement", item.productQuantity.value, item.productPrice);
 };
 
-// let price = ref(null);
-
-// const totalPrice = () => {
-//   price = cart.price * count;
-// };
+const totalPrice = (item) => [];
 
 console.log(cart);
 </script>

@@ -49,7 +49,7 @@
             </button>
           </div>
           <span class="text-[1.2rem] text-[#787878]">
-            ${{ item.price.toFixed(2) }} USD
+            ${{ item.price.value.toFixed(2) }} USD
           </span>
           <div class="my-[1rem] flex justify-between items-center">
             <!-- <select
@@ -81,8 +81,6 @@
 <script setup>
 import { ref, computed } from "vue";
 import { defineProps } from "vue";
-
-// import { addToCart, cart } from "../components/addToCart";
 
 import { addToCart, cart } from "@/components/addToCart";
 

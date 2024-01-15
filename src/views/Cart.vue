@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between items-start relative pb-[5rem]">
+  <div class="flex justify-around items-start relative pb-[5rem]">
     <main class="py-[5rem] px-[4rem]">
       <h1
         class="text-[4.3rem] tracking-tight font-medium pt-[5rem] max-w-[800px] text-[#222]"
@@ -30,16 +30,17 @@
               <div class="flex gap-5 justify-center mt-2 items-center">
                 <button
                   class="border p-1 text-bold rounded-full w-[30px] h-[30px] flex justify-center items-center"
-                  @click="decrementCount(index)"
+                  @click="decrementCount(item)"
                 >
                   -
                 </button>
+                <!-- <input type="text" readonly v-model="item.quantity" /> -->
                 <div>
-                  {{ item.quantity }}
+                  {{ item.productQuantity }}
                 </div>
                 <button
                   class="border p-1 text-bold rounded-full w-[30px] h-[30px] flex justify-center items-center"
-                  @click="incrementCount(index)"
+                  @click="incrementCount(item)"
                 >
                   +
                 </button>
@@ -58,57 +59,18 @@
 
       <div v-else class="text-[5rem] pt-[5rem]">Cart is Empty</div>
     </section>
-
-    <!-- <div>
-        <div>
-          <div class="cart__product__image">
-            <img :src="props.cart.image" alt="" />
-          </div>
-          <div class="cart__product__info">
-            <span class="cart__product__name">{{ props.cart.name }}</span>
-            <span class="cart__price">{{ props.cart.price }}</span>
-            <button class="cart__remove__button">Remove</button>
-          </div>
-        </div>
-
-        <div v-else>
-          <p>Your cart is empty.</p>
-        </div>
-      </div> -->
-    <footer></footer>
-    <!-- <section class="cart__container">
-      <div
-        class="cart__product"
-        v-for="(product, index) in cartProducts"
-        :key="index"
-      >
-        <div>
-          <div class="cart__product__image">
-            <img :src="product.imageSrc" alt="" />
-          </div>
-          <div class="cart__product__info">
-            <span class="cart__product__name">{{ product.name }}</span>
-            <span class="cart__price">{{ product.price }}</span>
-            <button class="cart__remove__button" @click="removeCart(index)">
-              Remove
-            </button>
-          </div>
-        </div>
-
-        <div class="input__container">
-          <input type="number" class="quantity" v-model="product.quantity" />
-        </div>
-      </div>
-
-      <div class="cart__total__container">
-        <div class="sub__total">
-          <span>Subtotal</span>
-
-          <span class="total">$24.00 USD</span>
-        </div>
-      </div>
-    </section> -->
   </div>
+  <!-- <footer class="py-[5rem] px-[4rem] flex justify-around">
+    <div>
+      <h2 class="text-[4rem] font-medium text-[#222]">Total</h2>
+    </div>
+
+    <div>
+      <span>
+        {{ price }}
+      </span>
+    </div>
+  </footer> -->
 </template>
 
 <script setup>
@@ -117,15 +79,25 @@ import { ref } from "vue";
 
 import { cart } from "@/components/addToCart";
 
-const incrementCount = (index) => {
-  cart.value[index].count.value += 1;
+const incrementCount = (item) => {
+  item.productQuantity++;
+  console.log("increment", item.productQuantity);
 };
 
-const decrementCount = (index) => {
-  if (cart.value[index].count.value > 0) {
-    cart.value[index].count.value -= 1;
+const decrementCount = (item) => {
+  if (item.productQuantity === 1) {
+    item.productQuantity = 1;
+  } else {
+    item.productQuantity--;
   }
+  console.log("decrement", item.productQuantity);
 };
+
+// let price = ref(null);
+
+// const totalPrice = () => {
+//   price = cart.price * count;
+// };
 
 console.log(cart);
 </script>

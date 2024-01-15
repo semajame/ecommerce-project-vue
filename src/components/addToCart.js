@@ -1,8 +1,6 @@
 // Define cart array
-import { ref } from "vue";
 
 const cart = [];
-const quantity = ref(1);
 
 // Define addToCart function
 const addToCart = (item, quantity) => {
@@ -26,7 +24,7 @@ const addToCart = (item, quantity) => {
       productName: item.name,
       productPrice: item.price,
       productId: item.id,
-      quantity: item.quantity,
+      productQuantity: item.quantity,
     });
 
     console.log(cart);

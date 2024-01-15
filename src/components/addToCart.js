@@ -24,7 +24,7 @@ const addToCart = (item, quantity) => {
       productName: item.name,
       productPrice: item.price,
       productId: item.id,
-      productQuantity: item.quantity,
+      productQuantity: item.quantity.value,
     });
 
     console.log(cart);

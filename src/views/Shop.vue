@@ -11,11 +11,7 @@
       v-for="button in buttons"
       :key="button.category"
       class="text-[1.3rem] pointer border-none tracking-[-0.1rem] font-medium text-[#222]"
-      @click="selectCategory(button.category), selectButton(button)"
-      :class="{
-        'text-[#5f825c]': button === selectedButton,
-        'text-[#222]': button !== selectedButton,
-      }"
+      @click="selectCategory(button.category)"
     >
       {{ button.buttonName }}
     </button>

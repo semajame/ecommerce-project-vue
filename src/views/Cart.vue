@@ -1,15 +1,8 @@
 <template>
   <div class="flex justify-around items-start relative pb-[5rem]">
-    <main class="py-[5rem] px-[4rem]">
-      <h1
-        class="text-[4.3rem] tracking-tight font-medium pt-[5rem] max-w-[800px] text-[#222]"
-      >
-        Cart
-      </h1>
-    </main>
-
-    <section class="px-[4rem] pt-[10rem]">
+    <main class="py-[7rem] px-[4rem]">
       <div v-if="cart.length > 0" class="flex gap-[2rem] flex-col">
+        <h1 class="text-[5rem] font-medium text-[#222]">Cart</h1>
         <div v-for="(item, index) in cart" :key="index" class="flex gap-[1rem]">
           <div>
             <img
@@ -34,9 +27,9 @@
                 >
                   -
                 </button>
-                <!-- <input type="text" readonly v-model="item.quantity" /> -->
+
                 <div>
-                  {{ item.productQuantity.value }}
+                  {{ item.productQuantity }}
                 </div>
                 <button
                   class="border p-1 text-bold rounded-full w-[30px] h-[30px] flex justify-center items-center"
@@ -55,59 +48,74 @@
             </button>
           </div>
         </div>
+
+        <div class="flex items-center gap-[5rem]">
+          <div>
+            <h3 class="text-[2rem] font-medium text-[#222]">Total:</h3>
+          </div>
+          <span class="font-medium text-[1.2rem]">
+            ${{ totalProductPrice.toFixed(2) }} USD
+          </span>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-green-500 text-white font-bold py-[0.9rem] rounded-md"
+        >
+          Checkout
+        </button>
       </div>
 
-      <div v-else class="text-[5rem] pt-[5rem]">Cart is Empty</div>
-    </section>
+      <div v-else class="text-[5rem] pt-[2rem] font-medium text-[#222]">
+        Cart is Empty
+      </div>
+    </main>
   </div>
   <!-- <footer class="py-[5rem] px-[4rem] flex justify-around">
-    <div>
-      <h2 class="text-[4rem] font-medium text-[#222]">Total</h2>
-    </div>
-
-    <div>
-      <span>
-        {{ price }}
-      </span>
-    </div>
+   
   </footer> -->
 </template>
 
 <script setup>
-import { defineProps } from "vue";
-// import { ref } from "vue";
-
+import { computed, ref, defineProps } from "vue";
 import { cart } from "@/components/addToCart";
 
-const incrementCount = (item) => {
-  item.productQuantity.value++;
+// const props = defineProps({
+//   plants: {
+//     type: Array,
+//     required: true,
+//   },
+// });
 
-  let totalPrice = item.productPrice + item.productOriginalPrice;
-
-  item.productPrice = totalPrice;
-  // console.log("increment", item.productQuantity.value);
-};
-
-const props = defineProps({
-  plants: {
-    type: Array,
-    required: true,
-  },
+const totalProductPrice = computed(() => {
+  return cart.value.reduce((total, item) => {
+    const price = Number(item.productPrice);
+    return !Number.isNaN(price) ? total + price : total;
+  }, 0);
 });
 
-const decrementCount = (item) => {
-  if (item.productQuantity.value === 1) {
-    item.productQuantity.value = 1;
-  } else {
-    item.productQuantity.value--;
-    let totalPrice = item.productPrice - item.productOriginalPrice;
-    item.productPrice = totalPrice;
-  }
+// const totalProductPrice = () => {
+//   return computed(() => {
+//     cart.reduce((total, item) => {
+//       const price = Number(item.productPrice);
+//       return !Number.isNaN(price) ? total + price : total;
+//     }, 0);
+//   });
+// };
 
-  console.log("decrement", item.productQuantity.value, item.productPrice);
+const incrementCount = (item) => {
+  item.productQuantity++;
+  item.productPrice += item.productOriginalPrice;
+  console.log(item.productPrice);
 };
 
-const totalPrice = (item) => [];
-
-console.log(cart);
+const decrementCount = (item) => {
+  if (item.productQuantity === 1) {
+    item.productQuantity = 1;
+  } else {
+    item.productQuantity--;
+    item.productPrice -= item.productOriginalPrice;
+    console.log(item.productPrice);
+  }
+};
 </script>

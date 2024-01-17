@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex justify-between items-center px-7 py-[1.5rem] fixed top-0 left-0 right-0 bg-white z-10"
+    class="flex justify-between items-center px-7 py-[1.5rem] fixed top-0 left-0 right-0 bg-white z-10 shadow-md"
   >
     <div>
       <router-link to="/">
@@ -29,11 +29,7 @@
           loading="lazy"
         />
       </button>
-      <router-link
-        to="/cart"
-        @click="console.log('cart clicked')"
-        class="relative"
-      >
+      <router-link to="/cart" class="relative">
         <img
           src="https://assets-global.website-files.com/645a69e5ff9a553155774bec/645bd3ee750e2bc9b41edaba_shop.svg"
           alt="Cart Image"

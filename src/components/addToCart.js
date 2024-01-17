@@ -1,15 +1,17 @@
-// Define cart array
+// Import ref and reactive from Vue
+import { ref, reactive } from "vue";
 
-const cart = [];
+// Initialize cart as a ref
+const cart = ref([]);
 
 // Define addToCart function
-const addToCart = (item, quantity) => {
+const addToCart = (item) => {
   let matchingItem;
 
   const productId = item.id;
 
-  // Iterate through the cart to find a matching item
-  cart.forEach((cartItem) => {
+  //  Iterate through the cart to find a matching item
+  cart.value.forEach((cartItem) => {
     if (productId === cartItem.productId) {
       matchingItem = cartItem;
     }
@@ -19,7 +21,8 @@ const addToCart = (item, quantity) => {
   if (matchingItem) {
     matchingItem.quantity += item.quantity;
   } else {
-    cart.push({
+    // Use reactive to make the added item reactive
+    const newItem = reactive({
       productImage: item.image,
       productName: item.name,
       productPrice: item.price.value,
@@ -28,8 +31,12 @@ const addToCart = (item, quantity) => {
       productQuantity: item.quantity,
     });
 
-    console.log(cart);
+    // Push the reactive item to the cart
+    cart.value.push(newItem);
+
+    console.log(cart.value);
   }
 };
 
+// Export the addToCart and cart
 export { addToCart, cart };

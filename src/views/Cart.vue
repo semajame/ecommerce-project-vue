@@ -41,7 +41,7 @@
             </div>
 
             <button
-              @click="removeFromCart(index)"
+              @click="removeFromCart(item)"
               class="bg-red-500 p-[0.5rem] rounded text-white w-full"
             >
               Remove
@@ -77,15 +77,8 @@
 </template>
 
 <script setup>
-import { computed, ref, defineProps } from "vue";
+import { computed } from "vue";
 import { cart } from "@/components/addToCart";
-
-// const props = defineProps({
-//   plants: {
-//     type: Array,
-//     required: true,
-//   },
-// });
 
 const totalProductPrice = computed(() => {
   return cart.value.reduce((total, item) => {
@@ -94,19 +87,9 @@ const totalProductPrice = computed(() => {
   }, 0);
 });
 
-// const totalProductPrice = () => {
-//   return computed(() => {
-//     cart.reduce((total, item) => {
-//       const price = Number(item.productPrice);
-//       return !Number.isNaN(price) ? total + price : total;
-//     }, 0);
-//   });
-// };
-
 const incrementCount = (item) => {
   item.productQuantity++;
   item.productPrice += item.productOriginalPrice;
-  console.log(item.productPrice);
 };
 
 const decrementCount = (item) => {
@@ -115,7 +98,10 @@ const decrementCount = (item) => {
   } else {
     item.productQuantity--;
     item.productPrice -= item.productOriginalPrice;
-    console.log(item.productPrice);
   }
+};
+
+const removeFromCart = (item) => {
+  cart.value.splice(item, 1);
 };
 </script>

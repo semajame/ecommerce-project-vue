@@ -36,18 +36,25 @@
           loading="lazy"
         />
 
-        <!-- <span
-          class="absolute bg-[#b94e31] text-white font-medium p-1 text-[0.9rem] rounded-full z-1 left-3 bottom-0 text-center h-[22px] w-[22px] flex justify-center items-center"
+        <span
+          class="absolute bg-green-500 text-white font-medium p-1 text-[0.9rem] rounded-full z-1 left-3 bottom-0 text-center h-[22px] w-[22px] flex justify-center items-center"
+          v-if="cart.length > 0"
         >
           {{ cartQuantity }}
-        </span> -->
+        </span>
       </router-link>
     </div>
   </header>
 </template>
 
 <script setup>
-// import { defineProps, ref } from "vue";
+import { computed } from "vue";
+import { cart } from "@/components/addToCart";
+
+const cartQuantity = computed(() => {
+  return cart.value.length;
+});
+
 const links = [
   {
     path: "/",
@@ -66,13 +73,6 @@ const links = [
     component: "Contacts",
   },
 ];
-
-// const props = defineProps({
-//   plants: {
-//     type: Array,
-//     required: true,
-//   },
-// });
 </script>
 
 <style></style>

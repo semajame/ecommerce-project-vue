@@ -33,8 +33,6 @@ const addToCart = (item) => {
 
     // Push the reactive item to the cart
     cart.value.push(newItem);
-
-    console.log(cart.value);
   }
 };
 

@@ -102,6 +102,13 @@ const decrementCount = (item) => {
 };
 
 const removeFromCart = (item) => {
-  cart.value.splice(item, 1);
+  const index = cart.value.indexOf(item);
+
+  if (index !== -1) {
+    cart.value[index].productQuantity = 1;
+    cart.value.splice(index, 1);
+  }
+
+  console.log(cart.value);
 };
 </script>

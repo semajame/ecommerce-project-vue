@@ -19,7 +19,7 @@
           class="bg-[#558d4e] text-white p-[1rem] rounded-md font-medium hover:bg-[#222] transition ease-in-out"
           >Discover our plants</router-link
         >
-        <button class="">Scroll for more</button>
+        <!-- <button class="">Scroll for more</button> -->
       </div>
     </div>
     <div class="">
@@ -31,15 +31,18 @@
     </div>
   </main>
   <Company />
+  <Quality />
   <Footer />
 </template>
 
 <script setup>
 import Company from "./Company.vue";
+import Quality from "./Quality.vue";
 import Footer from "./Footer.vue";
 
 components: {
   Company;
+  Quality;
   Footer;
 }
 </script>

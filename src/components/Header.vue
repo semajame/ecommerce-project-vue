@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex justify-between items-center px-7 py-[1.5rem] fixed top-0 left-0 right-0 bg-white z-10 shadow-sm"
+    class="flex justify-between items-center px-7 py-[1.5rem] fixed top-0 left-0 right-0 bg-white z-10 shadow-md"
   >
     <div>
       <router-link to="/">
@@ -11,24 +11,18 @@
         />
       </router-link>
     </div>
-    <div>
-      <router-link
-        :to="items.path"
-        class="font-md text-[1.1rem] px-3 font-medium tracking-tighter text-[#222]"
-        v-for="items in links"
-        :key="items"
-      >
-        {{ items.name }}
-      </router-link>
-    </div>
+
     <div class="flex gap-6">
-      <button @click="console.log('search clicked')">
-        <img
-          src="https://assets-global.website-files.com/645a69e5ff9a553155774bec/645bd3ee8488ed1f04f9a0c9_search.svg"
-          alt="Search Image"
-          loading="lazy"
-        />
-      </button>
+      <div>
+        <router-link
+          :to="items.path"
+          class="font-md text-[1.1rem] px-3 font-medium tracking-tighter text-[#222]"
+          v-for="items in links"
+          :key="items"
+        >
+          {{ items.name }}
+        </router-link>
+      </div>
       <router-link to="/cart" class="relative">
         <img
           src="https://assets-global.website-files.com/645a69e5ff9a553155774bec/645bd3ee750e2bc9b41edaba_shop.svg"

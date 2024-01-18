@@ -1,5 +1,5 @@
 <template>
-  <main class="w-full px-[4rem] py-[8rem] flex gap-[2rem]">
+  <main class="w-full px-[4rem] py-[10rem] flex gap-[2rem]">
     <div class="flex flex-col justify-betewen">
       <h1
         class="text-[90px] leading-[80px] text-[#222] font-semibold tracking-tighter"
@@ -16,7 +16,7 @@
       <div class="flex gap-[1rem]">
         <router-link
           to="/shop"
-          class="bg-[#9FBC9B] text-white p-[1rem] rounded-md font-medium hover:bg-[#222] transition ease-in-out"
+          class="bg-[#558d4e] text-white p-[1rem] rounded-md font-medium hover:bg-[#222] transition ease-in-out"
           >Discover our plants</router-link
         >
         <button class="">Scroll for more</button>

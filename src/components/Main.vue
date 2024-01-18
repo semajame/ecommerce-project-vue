@@ -1,38 +1,47 @@
 <template>
-  <main class="w-full h-[50rem] px-[5rem] pt-[7rem] pb-[2rem]">
-    <!-- <div class="grid grid-rows-3 grid-cols-4 h-full gap-3">
-      <div
-        class="bg-[url('https://assets.website-files.com/64ed01d0d959df99c03684cc/64ef1cfc570c8023bd5b3e05_feey-shAA_rxG2Yc-unsplash.jpg')] bg-no-repeat bg-cover bg-center col-start-1 row-start-1 col-end-3 row-end-3 relative rounded-lg -z-10"
+  <main class="w-full px-[4rem] py-[8rem] flex gap-[2rem]">
+    <div class="flex flex-col justify-betewen">
+      <h1
+        class="text-[90px] leading-[80px] text-[#222] font-semibold tracking-tighter"
       >
-        <div
-          class="z-1 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-opacity-30 to-opacity-30 rounded-lg"
-        ></div>
+        Discover a world of living green
+      </h1>
+
+      <p class="my-10 max-w-[500px] text-[1.1rem]">
+        We believe that green living starts from within. Step into a world of
+        vibrant foliage and unlock the secrets of creating your own lush indoor
+        garden.
+      </p>
+
+      <div class="flex gap-[1rem]">
+        <router-link
+          to="/shop"
+          class="bg-[#9FBC9B] text-white p-[1rem] rounded-md font-medium hover:bg-[#222] transition ease-in-out"
+          >Discover our plants</router-link
+        >
+        <button class="">Scroll for more</button>
       </div>
-      <div
-        class="bg-[url('https://assets.website-files.com/64ed01d0d959df99c03684cc/64ef1e641d50ae58a7cccc98_feey-dTLeHGu9FAw-unsplash.jpg')] bg-no-repeat bg-contain col-start-3 row-start-1 col-end-5 row-end-2 relative rounded-lg -z-10"
-      >
-        <div
-          class="z-1 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-opacity-30 to-opacity-30 rounded-lg"
-        ></div>
-      </div>
-      <div
-        class="bg-[url('https://assets-global.website-files.com/645a69e5ff9a553155774bec/645d2f4fd2e12fdd0cd2652a_daweee.webp')] bg-no-repeat bg-cover col-start-1 row-start-3 col-end-3 row-end-4 relative rounded-lg -z-10"
-      >
-        <div
-          class="z-1 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-opacity-30 to-opacity-30 rounded-lg"
-        ></div>
-      </div>
-      <div
-        class="bg-[url('https://assets-global.website-files.com/645a69e5ff9a553155774bec/645d2e8da232c66610fb20b2_asddd.webp')] bg-no-repeat bg-cover col-start-3 row-start-2 col-end-5 row-end-4 relative rounded-lg -z-10"
-      >
-        <div
-          class="z-1 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-opacity-30 to-opacity-30 rounded-lg"
-        ></div>
-      </div>
-    </div> -->
+    </div>
+    <div class="">
+      <img
+        src="https://assets-global.website-files.com/64ed01cfd959df99c0368448/64ef050b3ef9727944e85ac7_severin-candrian-0pJCjF_fpbM-unsplash%201%20(1).webp"
+        alt=""
+        class="object-cover w-[900px] h-[480px] rounded-xl"
+      />
+    </div>
   </main>
+  <Company />
+  <Footer />
 </template>
 
-<script setup></script>
+<script setup>
+import Company from "./Company.vue";
+import Footer from "./Footer.vue";
+
+components: {
+  Company;
+  Footer;
+}
+</script>
 
 <style></style>

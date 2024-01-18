@@ -1,7 +1,7 @@
 <template>
   <main class="py-[5rem] px-[4rem]">
     <h1
-      class="text-[4.3rem] tracking-tight font-medium pt-[5rem] max-w-[800px] text-[#222]"
+      class="text-[4.3rem] tracking-tight font-semibold pt-[5rem] max-w-[800px] text-[#222]"
     >
       Explore our green world
     </h1>
@@ -19,15 +19,15 @@
 
   <section class="px-[4rem] pb-[4rem]">
     <div
-      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 place-items-center"
+      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-9"
     >
-      <div v-for="item in filteredPlants" :key="item.id" class="max-w-[350px]">
+      <div v-for="item in filteredPlants" :key="item.id" class="max-w-[450px]">
         <div class="w-full">
           <img
             :src="item.image"
             loading="lazy"
             alt="Product Name"
-            class="w-full object-cover rounded h-[437px]"
+            class="w-full object-cover rounded h-[450px]"
           />
         </div>
         <div class="m-[1rem]">

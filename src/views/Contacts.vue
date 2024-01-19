@@ -115,6 +115,15 @@
           placeholder="Example text"
           class="w-full border border-gray-300 rounded-md focus:border-gray-500 outline-none p-[2rem]"
         ></textarea>
+
+        <div class="flex justify-center">
+          <button
+            type="submit"
+            class="no-underline text-white font-medium bg-[#222] py-4 px-8 rounded-md mt-[3rem] hover:bg-[#508648] transition ease-in-out"
+          >
+            Book an appointment
+          </button>
+        </div>
       </form>
     </div>
   </section>

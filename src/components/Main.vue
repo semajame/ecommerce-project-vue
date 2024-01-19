@@ -31,18 +31,22 @@
     </div>
   </main>
   <Company />
+  <Explore />
   <Quality />
+
   <Footer />
 </template>
 
 <script setup>
 import Company from "./Company.vue";
 import Quality from "./Quality.vue";
+import Explore from "./Explore.vue";
 import Footer from "./Footer.vue";
 
 components: {
   Company;
   Quality;
+  Explore;
   Footer;
 }
 </script>

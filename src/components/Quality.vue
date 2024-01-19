@@ -5,7 +5,7 @@
         <span class="text-[#a9a9a9] font-semibold text-[3rem] tracking-wide">
           {{ items.qualNum }}</span
         >
-        <h2 class="text-black font-semibold text-[3rem] tracking-wide">
+        <h2 class="text-black font-semibold text-[3rem] tracking-tight">
           {{ items.qualHeader }}
         </h2>
       </div>
@@ -20,7 +20,7 @@
     <div class="mt-[4rem] ml-[15rem]">
       <router-link
         to="/contacts"
-        class="no-underline text-white font-medium bg-[#222] py-4 px-8 rounded-md"
+        class="no-underline text-white font-medium bg-[#222] py-4 px-8 rounded-md hover:bg-[#508648] transition ease-in-out"
       >
         Learn More</router-link
       >

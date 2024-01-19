@@ -10,7 +10,7 @@
 
       <router-link
         to="/shop"
-        class="bg-white text-[#222] p-[1rem] rounded-md font-medium hover:bg-[#9FBC9B] transition ease-in-out hover:text-white"
+        class="bg-white text-[#222] p-[1rem] rounded-md font-medium hover:bg-[#558d4e] transition ease-in-out hover:text-white"
         >Discover our plants</router-link
       >
     </div>
@@ -39,10 +39,24 @@
     <div class="flex justify-between text-white">
       <span class="text-[1rem]"> © Greenery. All Rights Reserved 2024. </span>
 
-      <div class="flex gap-[3rem] text-[1.2rem]">
-        <a href="" class="underline"> Facebook </a>
-        <a href="" class="underline"> Instagram </a
-        ><a href="" class="underline"> Twitter </a>
+      <div class="flex gap-[3rem] text-[1.1rem]">
+        <a
+          href=""
+          class="underline hover:text-[#558d4e] hover:border-[#558d4e] transition ease-in-out"
+        >
+          Facebook
+        </a>
+        <a
+          href=""
+          class="underline hover:text-[#558d4e] hover:border-[#558d4e] transition ease-in-out"
+        >
+          Instagram </a
+        ><a
+          href=""
+          class="underline hover:text-[#558d4e] hover:border-[#558d4e] transition ease-in-out"
+        >
+          Twitter
+        </a>
       </div>
     </div>
   </footer>

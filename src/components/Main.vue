@@ -2,7 +2,7 @@
   <main class="w-full px-[4rem] py-[10rem] flex gap-[2rem]">
     <div class="flex flex-col justify-betewen">
       <h1
-        class="text-[90px] leading-[80px] text-[#222] font-semibold tracking-tighter"
+        class="text-[80px] leading-[80px] text-[#222] font-semibold tracking-tight"
       >
         Discover a world of living green
       </h1>

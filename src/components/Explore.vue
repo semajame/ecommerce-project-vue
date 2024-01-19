@@ -8,7 +8,7 @@
       </h2>
       <router-link
         to="/shop"
-        class="border-b border-solid border-black pb-2 block text-[#222]"
+        class="border-b border-solid border-black pb-2 block text-[#222] text-[1.2rem] font-medium tracking-tight hover:text-[#787878] ease-in-out transition hover:border-[#c7c4c4]"
         >View all products</router-link
       >
     </div>

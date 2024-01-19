@@ -12,7 +12,7 @@
       </router-link>
     </div>
 
-    <div class="flex gap-6">
+    <div class="flex gap-2">
       <div>
         <router-link
           :to="items.path"

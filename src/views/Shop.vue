@@ -72,9 +72,11 @@
       </div>
     </div>
   </section>
+  <Footer />
 </template>
 
 <script setup>
+import Footer from "@/components/Footer.vue";
 import { ref, computed } from "vue";
 
 import { addToCart, cart } from "@/components/addToCart";

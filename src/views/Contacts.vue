@@ -8,7 +8,7 @@
       <span class="text-[#508648]">we can.</span>
     </h1>
 
-    <div class="py-[10rem]">
+    <div class="pt-[10rem]">
       <div class="flex items-center justify-between">
         <div>
           <span class="text-[1.2rem] font-medium tracking-tighter">
@@ -78,15 +78,51 @@
       </div>
     </div>
   </main>
+  <section class="pb-[7rem]">
+    <h2
+      class="text-center text-[3.2rem] text-[#222] font-medium tracking-tighter mb-[2rem]"
+    >
+      Let's Get in Touch
+    </h2>
+
+    <div class="flex justify-center items-center">
+      <form action="">
+        <div class="flex gap-[2rem] items-center mb-[3rem]">
+          <input
+            type="text"
+            placeholder="Name"
+            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none"
+          />
+          <input
+            type="email"
+            name=""
+            id=""
+            placeholder="Email"
+            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none"
+          />
+          <input
+            type="text"
+            placeholder="Phone"
+            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none"
+          />
+        </div>
+
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Example text"
+          class="w-full border border-gray-300 rounded-md focus:border-gray-500 outline-none p-[2rem]"
+        ></textarea>
+      </form>
+    </div>
+  </section>
   <Footer />
 </template>
 
 <script setup>
 import Footer from "@/components/Footer.vue";
-
-components: {
-  Footer;
-}
 </script>
 
 <style></style>

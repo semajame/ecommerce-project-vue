@@ -22,12 +22,12 @@
       class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-9"
     >
       <div v-for="item in filteredPlants" :key="item.id" class="max-w-[450px]">
-        <div class="w-full">
+        <div class="w-full overflow-hidden">
           <img
             :src="item.image"
             loading="lazy"
             alt="Product Name"
-            class="w-full object-cover rounded h-[450px]"
+            class="w-full object-cover rounded h-[450px] transform transition-transform ease-in-out hover:scale-110"
           />
         </div>
         <div class="m-[1rem]">

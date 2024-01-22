@@ -17,12 +17,12 @@
     >
       <div class="max-w-[450px]" v-for="item in plants" :key="item.id">
         <router-link to="/shop" class="decoration-none w-full">
-          <div class="w-full">
+          <div class="w-full overflow-hidden">
             <img
               :src="item.image"
               loading="lazy"
               alt="Product Name"
-              class="w-full object-cover rounded h-[450px]"
+              class="w-full object-cover rounded h-[450px] transform transition-transform ease-in-out hover:scale-110"
             />
           </div>
 

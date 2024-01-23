@@ -1,6 +1,6 @@
 <template>
   <section v-motion-slide-visible-bottom>
-    <div class="flex justify-between p-[5rem] items-end">
+    <div class="flex justify-between p-[5rem] items-end max-sm:p-[2rem]">
       <h2
         class="text-[3.5rem] font-semibold tracking-tight text-[#222] max-w-[700px] leading-[3.5rem]"
       >
@@ -13,7 +13,7 @@
       >
     </div>
     <div
-      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-9 px-[4rem] pb-[4rem]"
+      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-9 px-[4rem] pb-[4rem] max-md:place-items-center"
     >
       <div class="max-w-[450px]" v-for="item in plants" :key="item.id">
         <router-link to="/shop" class="decoration-none w-full">

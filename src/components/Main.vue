@@ -1,6 +1,6 @@
 <template>
   <main
-    class="w-full px-[4rem] py-[10rem] flex gap-[2rem]"
+    class="w-full px-[4rem] py-[10rem] flex gap-[2rem] max-sm:flex-col-reverse max-sm:px-[2rem] max-md:flex-col-reverse"
     v-motion-slide-visible-bottom
   >
     <div class="flex flex-col justify-betewen">

@@ -1,6 +1,13 @@
 <template>
-  <section class="pt-[3rem] pb-[5rem]" v-motion-slide-visible-bottom>
-    <div class="pt-[3rem] pl-[15rem]" v-for="items in quality" :key="items.id">
+  <section
+    class="pt-[3rem] pb-[5rem] max-sm:px-[1rem] max-md:px-[1rem]"
+    v-motion-slide-visible-bottom
+  >
+    <div
+      class="pt-[3rem] pl-[15rem] max-sm:pl-[0] max-md:pl-[0]"
+      v-for="items in quality"
+      :key="items.id"
+    >
       <div class="flex items-center">
         <span class="text-[#a9a9a9] font-semibold text-[3rem] tracking-wide">
           {{ items.qualNum }}</span

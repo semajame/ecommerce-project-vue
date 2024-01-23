@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-[#222] p-[5rem]">
+  <footer class="bg-[#222] p-[5rem]" v-motion-slide-visible-bottom>
     <div class="flex justify-between items-end">
       <h3
         class="text-white text-[50px] max-w-[800px] leading-[50px] font-medium"

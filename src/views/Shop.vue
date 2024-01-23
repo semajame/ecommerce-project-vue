@@ -1,12 +1,15 @@
 <template>
-  <main class="py-[5rem] px-[4rem]">
+  <main class="py-[5rem] px-[4rem]" v-motion-slide-visible-bottom>
     <h1
       class="text-[4.3rem] tracking-tight font-semibold pt-[5rem] max-w-[800px] text-[#222]"
     >
       Explore our green world
     </h1>
   </main>
-  <section class="flex gap-[2rem] pb-[5rem] px-[5rem]">
+  <section
+    class="flex gap-[2rem] pb-[5rem] px-[5rem]"
+    v-motion-slide-visible-bottom
+  >
     <button
       v-for="button in buttons"
       :key="button.category"

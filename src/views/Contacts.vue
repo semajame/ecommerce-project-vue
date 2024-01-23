@@ -1,5 +1,5 @@
 <template>
-  <main class="p-[5rem]">
+  <main class="p-[5rem]" v-motion-slide-visible-bottom>
     <h1
       class="text-[3.7rem] tracking-tight font-semibold pt-[5rem] max-w-[1000px] text-[#222] leading-[60px]"
     >
@@ -78,7 +78,7 @@
       </div>
     </div>
   </main>
-  <section class="pb-[7rem]">
+  <section class="pb-[7rem]" v-motion-slide-visible-bottom>
     <h2
       class="text-center text-[3.2rem] text-[#222] font-medium tracking-tighter mb-[2rem]"
     >

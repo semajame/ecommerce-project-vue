@@ -1,5 +1,8 @@
 <template>
-  <main class="w-full px-[4rem] py-[10rem] flex gap-[2rem]">
+  <main
+    class="w-full px-[4rem] py-[10rem] flex gap-[2rem]"
+    v-motion-slide-visible-bottom
+  >
     <div class="flex flex-col justify-betewen">
       <h1
         class="text-[80px] leading-[80px] text-[#222] font-semibold tracking-tight"

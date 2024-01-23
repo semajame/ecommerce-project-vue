@@ -1,5 +1,8 @@
 <template>
-  <div class="flex justify-around items-start relative pb-[5rem]">
+  <div
+    class="flex justify-around items-start relative pb-[5rem]"
+    v-motion-slide-visible-bottom
+  >
     <main class="py-[7rem] px-[4rem]">
       <div v-if="cart.length > 0" class="flex gap-[2rem] flex-col">
         <h1 class="text-[5rem] font-medium text-[#222]">Cart</h1>

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-motion-slide-visible-bottom>
     <div class="flex justify-between p-[5rem] items-end">
       <h2
         class="text-[3.5rem] font-semibold tracking-tight text-[#222] max-w-[700px] leading-[3.5rem]"

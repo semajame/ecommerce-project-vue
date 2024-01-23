@@ -1,5 +1,5 @@
 <template>
-  <section class="px-[6rem] pb-[5rem]">
+  <section class="px-[6rem] pb-[5rem]" v-motion-slide-visible-bottom>
     <span class="font-bold text-[1.2rem]">Company</span>
     <h3
       class="my-[3rem] font-semibold text-[3rem] leading-[60px] tracking-tighter text-[#222]"

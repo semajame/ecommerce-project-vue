@@ -1,11 +1,10 @@
 <template>
   <main
     class="w-full px-[4rem] py-[10rem] flex gap-[2rem] max-sm:flex-col-reverse max-sm:px-[2rem] max-md:flex-col-reverse"
-
   >
     <div class="flex flex-col justify-betewen">
       <h1
-        class="text-[80px] leading-[80px] text-[#222] font-semibold tracking-tight"
+        class="header1 leading-[80px] text-[#222] font-semibold tracking-tight"
       >
         Discover a world of living green
       </h1>

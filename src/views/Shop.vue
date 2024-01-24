@@ -1,7 +1,7 @@
 <template>
   <main class="py-[5rem] px-[4rem]" v-motion-slide-visible-bottom>
     <h1
-      class="text-[4.3rem] tracking-tight font-semibold pt-[5rem] max-w-[800px] text-[#222]"
+      class="header1 tracking-tight font-semibold pt-[5rem] max-w-[800px] text-[#222] max-md:max-w-[none] max-sm:max-w-[none]"
     >
       Explore our green world
     </h1>
@@ -22,7 +22,7 @@
 
   <section class="px-[4rem] pb-[4rem]">
     <div
-      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-9"
+      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-9 max-md:place-items-center max-sm:place-items-center"
     >
       <div v-for="item in filteredPlants" :key="item.id" class="max-w-[450px]">
         <div class="w-full overflow-hidden">

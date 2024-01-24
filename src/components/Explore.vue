@@ -1,8 +1,10 @@
 <template>
   <section v-motion-slide-visible-bottom>
-    <div class="flex justify-between p-[5rem] items-end max-sm:p-[2rem]">
+    <div
+      class="flex justify-between p-[5rem] items-end max-sm:p-[2rem] max-md:p-[2rem]"
+    >
       <h2
-        class="text-[3.5rem] font-semibold tracking-tight text-[#222] max-w-[700px] leading-[3.5rem]"
+        class="header2 font-semibold tracking-tight text-[#222] max-w-[700px] max-md:max-w-[400px] max-sm:max-w-[200px]"
       >
         {{ shopHeader }}
       </h2>

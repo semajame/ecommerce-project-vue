@@ -12,19 +12,19 @@
         <span class="text-[#a9a9a9] font-semibold text-[3rem] tracking-wide">
           {{ items.qualNum }}</span
         >
-        <h2 class="text-black font-semibold text-[3rem] tracking-tight">
+        <h2 class="text-black font-semibold header2 tracking-tight">
           {{ items.qualHeader }}
         </h2>
       </div>
 
-      <p class="max-w-[800px] leading-6 text-gray-500 text-lg">
+      <p class="max-w-[800px] leading-6 text-gray-500 text-lg pt-[1rem]">
         {{ items.qualPara }}
       </p>
 
       <hr class="mt-[3rem] h-[1px] bg-[#a9a9a9] border-none" />
     </div>
 
-    <div class="mt-[4rem] ml-[15rem]">
+    <div class="mt-[4rem] ml-[15rem] max-md:ml-[2rem] max-sm:ml-[2rem]">
       <router-link
         to="/contacts"
         class="no-underline text-white font-medium bg-[#222] py-4 px-8 rounded-md hover:bg-[#508648] transition ease-in-out"

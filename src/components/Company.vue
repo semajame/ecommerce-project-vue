@@ -4,9 +4,7 @@
     v-motion-slide-visible-bottom
   >
     <span class="font-bold text-[1.2rem]">Company</span>
-    <h3
-      class="my-[3rem] font-semibold text-[3rem] leading-[60px] tracking-tighter text-[#222]"
-    >
+    <h3 class="my-[3rem] font-semibold header3 tracking-tighter text-[#222]">
       We are your one-stop destination for all things related to
       <span class="text-[#508648]"> plants and gardening </span>, providing you
       with high-quality products and expert advice

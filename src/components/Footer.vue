@@ -3,9 +3,9 @@
     class="bg-[#222] p-[5rem] max-sm:px-[2rem] max-md:px-[2rem]"
     v-motion-slide-visible-bottom
   >
-    <div class="flex justify-between items-end">
+    <div class="flex justify-between items-end max-sm:flex-col">
       <h3
-        class="text-white text-[50px] max-w-[800px] leading-[50px] font-medium"
+        class="text-white header3 max-w-[800px] leading-[50px] font-medium max-md:max-w-[none] max-sm:max-w-[none]"
       >
         Choose The Greenery and embark on a green journey that will transform
         your space and nourish your soul.
@@ -13,15 +13,15 @@
 
       <router-link
         to="/shop"
-        class="bg-white text-[#222] p-[1rem] rounded-md font-medium hover:bg-[#558d4e] transition ease-in-out hover:text-white"
+        class="bg-white text-[#222] p-[1rem] rounded-md font-medium hover:bg-[#558d4e] transition ease-in-out hover:text-white max-sm:mt-[2rem]"
         >Discover our plants</router-link
       >
     </div>
     <div class="my-[5rem] py-[5rem] border-t border-b border-[#7c7a7a]">
       <div>
-        <div class="flex items-center gap-[2rem]">
+        <div class="flex items-center gap-[2rem] max-md:flex-col">
           <div>
-            <h3 class="text-white font-bold text-[1.5rem]">
+            <h3 class="text-white font-bold header3">
               Subscribe to our newsletter.
             </h3>
             <p class="text-white max-w-[400px] my-[0.5rem]">
@@ -39,10 +39,12 @@
         </div>
       </div>
     </div>
-    <div class="flex justify-between text-white">
+    <div class="flex justify-between text-white max-md:flex-col">
       <span class="text-[1rem]"> © Greenery. All Rights Reserved 2024. </span>
 
-      <div class="flex gap-[3rem] text-[1.1rem]">
+      <div
+        class="flex gap-[3rem] text-[1.1rem] max-sm:mt-[2rem] max-sm:text-[0.9rems]"
+      >
         <a
           href=""
           class="underline hover:text-[#558d4e] hover:border-[#558d4e] transition ease-in-out"

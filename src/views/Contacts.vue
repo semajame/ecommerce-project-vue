@@ -1,7 +1,7 @@
 <template>
-  <main class="p-[5rem]" v-motion-slide-visible-bottom>
+  <main class="p-[5rem] max-md:px-[2rem]" v-motion-slide-visible-bottom>
     <h1
-      class="text-[3.7rem] tracking-tight font-semibold pt-[5rem] max-w-[1000px] text-[#222] leading-[60px]"
+      class="header1 tracking-tight font-semibold pt-[5rem] max-w-[1000px] text-[#222] max-md:max-w-[none] max-sm:max-w-[none]"
     >
       <span class="text-[#508648]">Contact us.</span> We are here to assist you
       in any way
@@ -9,7 +9,9 @@
     </h1>
 
     <div class="pt-[10rem]">
-      <div class="flex items-center justify-between">
+      <div
+        class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-[2rem]"
+      >
         <div>
           <span class="text-[1.2rem] font-medium tracking-tighter">
             Visit Our Store
@@ -31,7 +33,7 @@
           </p>
         </div>
         <div>
-          <div class="bg-[#508648] text-white p-[2rem] rounded-md w-[500px]">
+          <div class="bg-[#508648] text-white p-[2rem] rounded-md w-[100%]">
             <span class="text-[1.5rem] font-semibold"> Working Hours </span>
             <hr class="my-[2rem]" />
 
@@ -80,14 +82,16 @@
   </main>
   <section class="pb-[7rem]" v-motion-slide-visible-bottom>
     <h2
-      class="text-center text-[3.2rem] text-[#222] font-medium tracking-tighter mb-[2rem]"
+      class="text-center header2 text-[#222] font-medium tracking-tighter mb-[2rem]"
     >
       Let's Get in Touch
     </h2>
 
     <div class="flex justify-center items-center">
       <form action="">
-        <div class="flex gap-[2rem] items-center mb-[3rem]">
+        <div
+          class="flex gap-[2rem] items-center mb-[3rem] max-md:flex-col max-md:items-start"
+        >
           <input
             type="text"
             placeholder="Name"

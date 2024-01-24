@@ -1,5 +1,5 @@
 <template>
-  <main class="p-[5rem] max-md:px-[2rem]" v-motion-slide-visible-bottom>
+  <main class="p-[5rem] max-md:px-[2rem]">
     <h1
       class="header1 tracking-tight font-semibold pt-[5rem] max-w-[1000px] text-[#222] max-md:max-w-[none] max-sm:max-w-[none]"
     >

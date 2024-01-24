@@ -1,5 +1,5 @@
 <template>
-  <main class="py-[5rem] px-[4rem]" v-motion-slide-visible-bottom>
+  <main class="py-[5rem] px-[4rem]" >
     <h1
       class="header1 tracking-tight font-semibold pt-[5rem] max-w-[800px] text-[#222] max-md:max-w-[none] max-sm:max-w-[none]"
     >

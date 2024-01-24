@@ -66,7 +66,10 @@
         </button>
       </div>
 
-      <div v-else class="text-[5rem] pt-[2rem] font-medium text-[#222]">
+      <div
+        v-else
+        class="text-[5rem] pt-[2rem] font-medium text-[#222] pb-[20rem]"
+      >
         Cart is Empty
       </div>
     </main>
@@ -74,9 +77,11 @@
   <!-- <footer class="py-[5rem] px-[4rem] flex justify-around">
    
   </footer> -->
+  <Footer />
 </template>
 
 <script setup>
+import Footer from "@/components/Footer.vue";
 import { computed } from "vue";
 import { cart } from "@/components/addToCart";
 

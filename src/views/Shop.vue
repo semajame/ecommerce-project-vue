@@ -1,5 +1,5 @@
 <template>
-  <main class="py-[5rem] px-[4rem]" >
+  <main class="py-[5rem] px-[4rem] max-md:px-[1rem] max-sm:px-[1rem]">
     <h1
       class="header1 tracking-tight font-semibold pt-[5rem] max-w-[800px] text-[#222] max-md:max-w-[none] max-sm:max-w-[none]"
     >
@@ -7,7 +7,7 @@
     </h1>
   </main>
   <section
-    class="flex gap-[2rem] pb-[5rem] px-[5rem]"
+    class="max-md:grid max-md:grid-cols-1 max-md:sm:grid-cols-1 max-md:md:grid-cols-2 max-md:xl:grid-cols-3 flex gap-[2rem] max-md:gap-[1rem] pb-[5rem] px-[5rem] max-md:px-[1rem] max-sm:px-[1rem]"
     v-motion-slide-visible-bottom
   >
     <button
@@ -20,7 +20,7 @@
     </button>
   </section>
 
-  <section class="px-[4rem] pb-[4rem]">
+  <section class="px-[4rem] pb-[4rem] max-md:px-[1rem] max-sm:px-[1rem]">
     <div
       class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-9 max-md:place-items-center max-sm:place-items-center"
     >

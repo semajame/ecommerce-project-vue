@@ -11,11 +11,11 @@
       <router-link
         to="/shop"
         class="border-b border-solid border-black pb-2 block text-[#222] text-[1.2rem] font-medium tracking-tight hover:text-[#787878] ease-in-out transition hover:border-[#c7c4c4]"
-        >View all products</router-link
-      >
+        >View Products
+      </router-link>
     </div>
     <div
-      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-9 px-[4rem] pb-[4rem] max-md:place-items-center"
+      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-9 px-[4rem] pb-[4rem] max-md:place-items-center max-md:px-[2rem]"
     >
       <div class="max-w-[450px]" v-for="item in plants" :key="item.id">
         <router-link to="/shop" class="decoration-none w-full">

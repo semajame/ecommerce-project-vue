@@ -30,3 +30,7 @@
   font-size: clamp(1.5rem, 8vw, 2.7rem);
   line-height: 1.2;
 }
+
+.box-shadow {
+  box-shadow: 0 300px 5px 400px #000000bf;
+}

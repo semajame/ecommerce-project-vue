@@ -8,7 +8,7 @@
   </main>
   <section
     class="max-md:grid max-md:grid-cols-1 max-md:sm:grid-cols-1 max-md:md:grid-cols-2 max-md:xl:grid-cols-3 flex gap-[2rem] max-md:gap-[1rem] pb-[5rem] px-[5rem] max-md:px-[1rem] max-sm:px-[1rem]"
-    v-motion-slide-visible-bottom
+   
   >
     <button
       v-for="button in buttons"

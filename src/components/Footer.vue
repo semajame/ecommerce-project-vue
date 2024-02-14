@@ -3,7 +3,7 @@
     class="bg-[#222] p-[5rem] max-sm:px-[2rem] max-md:px-[2rem]"
     v-motion-slide-visible-bottom
   >
-    <div class="flex justify-between items-end max-sm:flex-col">
+    <div class="flex justify-between items-end max-sm:flex-col max-md:flex-col">
       <h3
         class="text-white header3 max-w-[800px] leading-[50px] font-medium max-md:max-w-[none] max-sm:max-w-[none]"
       >
@@ -13,7 +13,7 @@
 
       <router-link
         to="/shop"
-        class="bg-white text-[#222] p-[1rem] rounded-md font-medium hover:bg-[#558d4e] transition ease-in-out hover:text-white max-sm:mt-[2rem]"
+        class="bg-white text-[#222] p-[1rem] rounded-md font-medium hover:bg-[#558d4e] transition ease-in-out hover:text-white max-sm:mt-[2rem] max-md:mt-[2rem]"
         >Discover our plants</router-link
       >
     </div>
@@ -43,7 +43,7 @@
       <span class="text-[1rem]"> © Greenery. All Rights Reserved 2024. </span>
 
       <div
-        class="flex gap-[3rem] text-[1.1rem] max-sm:mt-[2rem] max-sm:text-[0.9rems]"
+        class="flex gap-[3rem] text-[1.1rem] max-sm:mt-[2rem] max-sm:text-[0.9rems] max-md:mt-[2rem]"
       >
         <a
           href=""

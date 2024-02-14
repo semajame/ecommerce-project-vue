@@ -12,7 +12,7 @@
       <div
         class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-[2rem]"
       >
-        <div>
+        <div class="w-[60%] max-md:w-[100%]">
           <span class="text-[1.2rem] font-medium tracking-tighter">
             Visit Our Store
           </span>
@@ -32,8 +32,8 @@
             style and preference.
           </p>
         </div>
-        <div>
-          <div class="bg-[#508648] text-white p-[2rem] rounded-md w-[100%]">
+        <div class="w-[40%] max-md:w-[100%]">
+          <div class="bg-[#508648] text-white p-[2rem] rounded-md">
             <span class="text-[1.5rem] font-semibold"> Working Hours </span>
             <hr class="my-[2rem]" />
 

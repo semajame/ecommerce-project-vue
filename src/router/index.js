@@ -9,6 +9,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: "/:pathMatch(.*)*",
+      name: "NotFound",
+      component: NotFound,
+    },
+    {
       path: "/",
       name: "Home",
       component: Home,
@@ -27,12 +32,7 @@ const router = createRouter({
       path: "/cart",
       name: "Cart",
       component: Cart,
-    },
-    {
-      path: "/:pathMatch(.*)*",
-      name: "NotFound",
-      component: NotFound,
-    },
+    }
   ],
 });
 

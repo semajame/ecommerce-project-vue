@@ -1,9 +1,9 @@
 <template>
   <div class="my-[10rem]">
     <!-- Display single item details -->
-    <div v-if="item" :key="item.id" class="m-auto px-20">
-      <div class="flex gap-10 justify-center">
-        <div class="w-[45%]">
+    <div v-if="item" :key="item.id" class="m-auto px-20 max-md:px-10">
+      <div class="flex gap-10 justify-center max-md:flex-col">
+        <div class="w-[45%] max-md:w-full">
           <img
             :src="item.image"
             loading="lazy"
@@ -11,7 +11,7 @@
             class="w-full object-cover h-[50%] rounded transform transition-transform ease-in-out hover:scale-110"
           />
         </div>
-        <div class="w-[55%]">
+        <div class="w-[55%] max-md:w-full">
           <div class="flex flex-col gap-5">
             <h2 class="text-7xl tracking-tighter font-medium text-slate-900">
               {{ item.name }}

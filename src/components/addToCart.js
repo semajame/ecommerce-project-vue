@@ -25,7 +25,7 @@ const addToCart = (item) => {
     const newItem = reactive({
       productImage: item.image,
       productName: item.name,
-      productPrice: item.price.value,
+      productPrice: item.price,
       productId: item.id,
       productOriginalPrice: item.originalPrice,
       productQuantity: item.quantity,

@@ -35,8 +35,6 @@
   <Company />
   <Explore />
   <Quality />
-
-  <Footer />
 </template>
 
 <script setup>

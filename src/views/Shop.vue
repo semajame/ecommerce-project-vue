@@ -8,7 +8,6 @@
   </main>
   <section
     class="max-md:grid max-md:grid-cols-1 max-md:sm:grid-cols-1 max-md:md:grid-cols-2 max-md:xl:grid-cols-3 flex gap-[2rem] max-md:gap-[1rem] pb-[5rem] px-[5rem] max-md:px-[1rem] max-sm:px-[1rem]"
-   
   >
     <button
       v-for="button in buttons"
@@ -25,61 +24,50 @@
       class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-9 max-md:place-items-center max-sm:place-items-center"
     >
       <div v-for="item in filteredPlants" :key="item.id" class="max-w-[450px]">
-        <div class="w-full overflow-hidden">
-          <img
-            :src="item.image"
-            loading="lazy"
-            alt="Product Name"
-            class="w-full object-cover rounded h-[450px] transform transition-transform ease-in-out hover:scale-110"
-          />
-        </div>
-        <div class="m-[1rem]">
-          <div class="flex justify-between items-center">
-            <h3 class="text-[1.5rem] font-medium text-black tracking-[-0.1rem]">
-              {{ item.name }}
-            </h3>
-            <button>
-              <img
-                src="https://assets.website-files.com/64ed01cfd959df99c0368448/64ef122c8a3b67f03dbd9175_arrow-down-right.svg"
-                loading="lazy"
-                alt="Arrow Image"
-                class="pointer"
-              />
-            </button>
+        <router-link
+          :to="{ name: 'ProductDetail', params: { name: item.name } }"
+        >
+          <div class="w-full overflow-hidden">
+            <img
+              :src="item.image"
+              loading="lazy"
+              alt="Product Name"
+              class="w-full object-cover rounded h-[450px] transform transition-transform ease-in-out hover:scale-110"
+            />
           </div>
-          <span class="text-[1.2rem] text-[#787878]">
-            ${{ item.price.value.toFixed(2) }} USD
-          </span>
-          <div class="my-[1rem] flex justify-between items-center">
-            <!-- <select
-              name=""
-              id=""
-              v-model="quantity"
-              class="p-2 w-[80px] border border-light-gray rounded-md outline-none focus:border border-solid focus:border-black bg-transparent"
-            >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select> -->
-
-            <button
-              class="bg-transparent pb-2 border-b border-solid border-black cursor-pointer font-medium hover:text-[#787878] text-lg"
-              @click="addToCart(item)"
-            >
-              Add to Cart
-            </button>
+          <div class="m-[1rem]">
+            <div class="flex justify-between items-center">
+              <h3
+                class="text-[1.5rem] font-medium text-black tracking-[-0.1rem]"
+              >
+                {{ item.name }}
+              </h3>
+              <button>
+                <img
+                  src="https://assets.website-files.com/64ed01cfd959df99c0368448/64ef122c8a3b67f03dbd9175_arrow-down-right.svg"
+                  loading="lazy"
+                  alt="Arrow Image"
+                  class="pointer"
+                />
+              </button>
+            </div>
+            <span class="text-[1.2rem] text-[#787878]">
+              ${{ item.price.value.toFixed(2) }} USD
+            </span>
           </div>
-        </div>
+        </router-link>
+        <button
+          class="bg-transparent pb-2 ml-4 border-b border-solid border-black cursor-pointer font-medium hover:text-[#787878] text-lg"
+          @click="addToCart(item)"
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   </section>
-  <Footer />
 </template>
 
 <script setup>
-import Footer from "@/components/Footer.vue";
 import { ref, computed } from "vue";
 
 import { addToCart, cart } from "@/components/addToCart";

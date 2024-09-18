@@ -39,7 +39,7 @@
       </ul>
     </nav>
 
-    <nav class="flex gap-2 items-center relative">
+    <nav class="flex gap-4 items-center relative">
       <ul class="max-md:hidden">
         <li>
           <router-link

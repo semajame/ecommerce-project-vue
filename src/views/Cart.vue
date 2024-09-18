@@ -74,14 +74,9 @@
       </div>
     </main>
   </div>
-  <!-- <footer class="py-[5rem] px-[4rem] flex justify-around">
-   
-  </footer> -->
-  <Footer />
 </template>
 
 <script setup>
-import Footer from "@/components/Footer.vue";
 import { computed } from "vue";
 import { cart } from "@/components/addToCart";
 

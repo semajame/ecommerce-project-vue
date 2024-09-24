@@ -10,7 +10,9 @@
         changed or is temporarily unavailable.
       </p>
 
-      <router-link to="/" class="back__button">Back To Homepage</router-link>
+      <router-link to="/" class="mt-10 bg-[#558d4e]"
+        >Back To Homepage</router-link
+      >
     </div>
   </div>
 </template>
@@ -65,7 +67,6 @@ body {
 }
 
 .notfound .notfound-404 h1 {
-  font-family: "Maven Pro", sans-serif;
   color: #ececec;
   font-weight: 900;
   font-size: 276px;
@@ -79,7 +80,6 @@ body {
 }
 
 .notfound h2 {
-  font-family: "Maven Pro", sans-serif;
   font-size: 46px;
   color: #000;
   font-weight: 900;
@@ -88,7 +88,6 @@ body {
 }
 
 .notfound p {
-  font-family: "Maven Pro", sans-serif;
   font-size: 16px;
   color: #000;
   font-weight: 400;
@@ -97,11 +96,10 @@ body {
 }
 
 .notfound a {
-  font-family: "Maven Pro", sans-serif;
   font-size: 14px;
   text-decoration: none;
   text-transform: uppercase;
-  background: #189cf0;
+
   display: inline-block;
   padding: 16px 38px;
   border: 2px solid transparent;
@@ -113,13 +111,9 @@ body {
 }
 
 .notfound a:hover {
-  background-color: #fff;
-  border-color: #189cf0;
-  color: #189cf0;
-}
+  background-color: #222;
 
-.back__button {
-  margin-top: 2rem;
+  color: #fff;
 }
 
 @media only screen and (max-width: 480px) {

@@ -7,13 +7,8 @@ import NotFound from "../views/NotFound.vue";
 import ProductDetail from "../views/ProductDetail.vue";
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory("/"),
   routes: [
-    {
-      path: "/:pathMatch(.*)*",
-      name: "NotFound",
-      component: NotFound,
-    },
     {
       path: "/",
       name: "Home",
@@ -38,6 +33,11 @@ const router = createRouter({
       path: "/shop/:name",
       name: "ProductDetail",
       component: ProductDetail,
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "NotFound",
+      component: NotFound,
     },
   ],
 });

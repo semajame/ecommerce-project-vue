@@ -1,8 +1,9 @@
 // Import ref and reactive from Vue
-import { ref, reactive } from "vue";
+import { ref, reactive, watchEffect } from "vue";
 
-// Initialize cart as a ref
-const cart = ref([]);
+// Load the cart from localStorage or initialize it as an empty array if not found
+const savedCart = localStorage.getItem("cart");
+const cart = ref(savedCart ? JSON.parse(savedCart) : []);
 
 // Define addToCart function
 const addToCart = (item) => {
@@ -10,7 +11,7 @@ const addToCart = (item) => {
 
   const productId = item.id;
 
-  //  Iterate through the cart to find a matching item
+  // Iterate through the cart to find a matching item
   cart.value.forEach((cartItem) => {
     if (productId === cartItem.productId) {
       matchingItem = cartItem;
@@ -19,7 +20,7 @@ const addToCart = (item) => {
 
   // If a matching item is found, increment its quantity; otherwise, add a new item to the cart
   if (matchingItem) {
-    matchingItem.quantity += item.quantity;
+    matchingItem.productQuantity += item.quantity;
   } else {
     // Use reactive to make the added item reactive
     const newItem = reactive({
@@ -35,6 +36,11 @@ const addToCart = (item) => {
     cart.value.push(newItem);
   }
 };
+
+// Watch for changes in the cart and save it to localStorage whenever it changes
+watchEffect(() => {
+  localStorage.setItem("cart", JSON.stringify(cart.value));
+});
 
 // Export the addToCart and cart
 export { addToCart, cart };

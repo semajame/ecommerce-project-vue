@@ -10,7 +10,7 @@
         changed or is temporarily unavailable.
       </p>
 
-      <router-link to="/" class="mt-10 bg-[#558d4e]"
+      <router-link to="/" class="mt-10 bg-[#558d4e] btn rounded-md"
         >Back To Homepage</router-link
       >
     </div>
@@ -96,14 +96,11 @@ body {
 }
 
 .notfound a {
-  font-size: 14px;
-  text-decoration: none;
-  text-transform: uppercase;
+  font-size: 16px;
 
   display: inline-block;
   padding: 16px 38px;
   border: 2px solid transparent;
-  border-radius: 40px;
   color: #fff;
   font-weight: 400;
   -webkit-transition: 0.2s all;

@@ -8,7 +8,7 @@
             :src="item.image"
             loading="lazy"
             alt="Product Name"
-            class="w-full object-cover h-[50%] rounded transform transition-transform ease-in-out hover:scale-110"
+            class="w-full object-cover h-[50%] rounded"
           />
         </div>
         <div class="w-[55%] max-md:w-full">

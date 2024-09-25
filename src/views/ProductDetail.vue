@@ -56,9 +56,12 @@
       <p>Product not found.</p>
     </div>
   </div>
+
+  <Explore />
 </template>
 
 <script setup>
+import Explore from "@/components/Explore.vue";
 import { onMounted, ref, computed } from "vue";
 import { useRoute } from "vue-router";
 import { cart, addToCart } from "@/components/addToCart";

@@ -20,7 +20,7 @@ const plants = [
     originalPrice: ref(18),
     id: 1,
     category: ["Flowering Plants", "Low Maintenance"],
-    quantity: ref(1),
+    quantity: 1,
     paragraph:
       "Jesse is not your ordinary houseplant; it's a living work of art that adds a touch of elegance and vibrancy to any space it graces. Standing at a modest height of 18 inches, Jesse boasts a symphony of emerald-green leaves that fan out like delicate brushes, creating a mesmerizing display reminiscent of a painter's masterpiece.",
     details: [
@@ -39,7 +39,7 @@ const plants = [
     originalPrice: ref(24),
     id: 2,
     category: ["Succulents", "Low-Maintenance"],
-    quantity: ref(1),
+    quantity: 1,
     paragraph:
       "Introducing Winson, a captivating houseplant that exudes an air of timeless elegance and botanical charm. Standing tall at 2 feet, Winson possesses an aura of grandeur with its striking presence. Its lush foliage cascades gracefully, creating a mesmerizing curtain of vibrant green that transforms any space into a tranquil oasis.",
     details: [
@@ -56,7 +56,7 @@ const plants = [
     originalPrice: ref(30),
     id: 3,
     category: ["Flowering Plants", "Succulents"],
-    quantity: ref(1),
+    quantity: 1,
     paragraph:
       "Allow me to introduce Venus, a celestial houseplant that brings a touch of otherworldly beauty to your living space. Standing at a modest height of 10 inches, Venus captivates with its delicate yet enchanting presence. Its unique charm lies in its petite size and the ethereal elegance it adds to any corner it graces.",
     details: [
@@ -74,7 +74,7 @@ const plants = [
     originalPrice: ref(18),
     id: 4,
     category: ["Flowering Plants", "Air Purifiers", "Indoor Foliage"],
-    quantity: ref(1),
+    quantity: 1,
     paragraph:
       "Allow me to introduce Lineo, an architectural marvel among houseplants that brings a sense of sophistication and modernity to your living space. Standing proudly at 3 feet, Lineo is a striking blend of nature and design, making it a true statement piece in any room it graces.",
     details: [
@@ -93,7 +93,7 @@ const plants = [
     originalPrice: ref(30),
     id: 5,
     category: ["Succulents", "Air Purifiers", "Indoor Foliage"],
-    quantity: ref(1),
+    quantity: 1,
     paragraph:
       "Allow me to introduce Mark, a charismatic houseplant that infuses your surroundings with a sense of natural vitality and artistic flair. Standing at a height of 1.5 feet, Mark possesses a unique blend of rugged charm and gentle elegance that makes it a captivating addition to any space.",
     details: [
@@ -112,7 +112,7 @@ const plants = [
     originalPrice: ref(24),
     id: 6,
     category: ["Low-Maintenance", "Indoor Foliage"],
-    quantity: ref(1),
+    quantity: 1,
     paragraph:
       "Allow me to introduce Fusion, a botanical masterpiece that bridges the gap between nature and innovation, bringing a touch of modern enchantment to your living space. Standing at a height of 2 feet, Fusion is a living testament to the harmonious blend of artistry and natural beauty.",
     details: [
@@ -131,7 +131,7 @@ const plants = [
     originalPrice: ref(18),
     id: 7,
     category: ["Air Purifiers"],
-    quantity: ref(1),
+    quantity: 1,
     paragraph:
       "Allow me to introduce Lucky, a charming and resilient houseplant that brings a touch of serenity and positive energy to your living space. Standing at a modest height of 1 foot, Lucky is a symbol of nature's blessings and a delightful addition to any corner it graces.",
     details: [

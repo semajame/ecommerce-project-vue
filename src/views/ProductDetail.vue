@@ -32,7 +32,7 @@
 
               <button
                 class="mt-5 bg-[#222] p-5 rounded-lg text-white font-medium text-lg hover:bg-[#558d4e]"
-                @click="addToCart(item)"
+                @click="handleAddToCart(item)"
               >
                 Add to Cart
               </button>
@@ -57,6 +57,7 @@
     </div>
   </div>
 
+  <Toast position="bottom-right" group="br" />
   <Explore />
 </template>
 
@@ -69,6 +70,24 @@ import { cart, addToCart } from "@/components/addToCart";
 const route = useRoute(); // Get the current route
 const productName = route.params.name; // Extract the 'name' from the route params
 const item = ref(null); // Initialize item as null
+
+import { useToast } from "primevue/usetoast";
+const toast = useToast();
+
+const showToast = (item) => {
+  toast.add({
+    severity: "success",
+    summary: "Success",
+    detail: `${item.name} is added to cart!`,
+    group: "br",
+    life: 3000,
+  });
+};
+
+const handleAddToCart = (item) => {
+  addToCart(item); // Add the item to the cart
+  showToast(item); // Show toast notification for the added item
+};
 
 // Assuming 'plants' is passed as a prop
 const props = defineProps({

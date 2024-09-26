@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  /* Optionally override other PrimeVue components if needed */
+  .p-component {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .p-toast-detail {
+    color: rgb(37, 36, 36) !important;
+  }
+
+  /* .p-toast-message {
+    margin: 0 !important;
+  } */
+}
+
 @layer base {
   body {
     font-family: "Inter", sans-serif;

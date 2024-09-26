@@ -56,21 +56,42 @@
             </span>
           </div>
         </router-link>
+
         <button
           class="bg-transparent pb-2 ml-4 border-b border-solid border-black cursor-pointer font-medium hover:text-[#787878] text-lg"
-          @click="addToCart(item)"
+          @click="handleAddToCart(item)"
         >
           Add to Cart
         </button>
       </div>
     </div>
   </section>
+
+  <Toast position="bottom-right" group="br" />
 </template>
 
 <script setup>
 import { ref, computed } from "vue";
 
 import { addToCart, cart } from "@/components/addToCart";
+
+import { useToast } from "primevue/usetoast";
+const toast = useToast();
+
+const showToast = (item) => {
+  toast.add({
+    severity: "success",
+    summary: "Success",
+    detail: `${item.name} is added to cart!`,
+    group: "br",
+    life: 3000,
+  });
+};
+
+const handleAddToCart = (item) => {
+  addToCart(item); // Add the item to the cart
+  showToast(item); // Show toast notification for the added item
+};
 
 const selectedCategory = ref("All");
 

@@ -13,6 +13,11 @@ const router = createRouter({
       path: "/",
       name: "Home",
       component: Home,
+      meta: {
+        title: "Home - Greenery Ecommerce",
+        description:
+          "Welcome to Greenery Ecommerce, your go-to shop for plants.",
+      },
     },
     {
       path: "/shop",
@@ -20,10 +25,8 @@ const router = createRouter({
       component: Shop,
       meta: {
         title: "Shop - Greenery Ecommerce",
-        name: "description",
-        hid: "description",
-        content:
-          "Explore shop page, where plants are displayed it's name and price.",
+        description:
+          "Explore the shop page, where plants are displayed with their names and prices.",
       },
     },
     {
@@ -32,10 +35,8 @@ const router = createRouter({
       component: Contacts,
       meta: {
         title: "Contacts - Greenery Ecommerce",
-        name: "description",
-        hid: "description",
-        content:
-          "Explore contact page, where opening hours and contact form are displayed.",
+        description:
+          "Visit the contacts page to see our opening hours and fill out the contact form.",
       },
     },
     {
@@ -44,10 +45,8 @@ const router = createRouter({
       component: Cart,
       meta: {
         title: "Cart - Greenery Ecommerce",
-        name: "description",
-        hid: "description",
-        content:
-          "Explore cart page, where your added plants are, here displays the total price, quantity and shipping informations.",
+        description:
+          "View your cart with added plants, total prices, quantities, and shipping information.",
       },
     },
     {
@@ -56,26 +55,41 @@ const router = createRouter({
       component: ProductDetail,
       meta: {
         title: (route) => `${route.params.name} - Greenery Ecommerce`,
-        name: "description",
-        hid: "description",
-        content:
-          "Explore plant detail, the information of the plant is displayed.",
+        description:
+          "Explore detailed information about the selected plant, including its name and features.",
       },
     },
     {
       path: "/:pathMatch(.*)*",
       name: "NotFound",
       component: NotFound,
+      meta: {
+        title: "404 - Page Not Found",
+        description: "The page you are looking for does not exist.",
+      },
     },
   ],
 });
 
 router.beforeEach((to, from, next) => {
-  // Scroll to the top of the page
+  // Set the document title
   const title =
     typeof to.meta.title === "function" ? to.meta.title(to) : to.meta.title;
   document.title = title || "Greenery - Ecommerce Plant Website";
+
+  // Set the meta description
+  const description = to.meta.description || "Default meta description.";
+  let metaDescription = document.querySelector("meta[name='description']");
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    document.head.appendChild(metaDescription);
+  }
+  metaDescription.content = description;
+
+  // Scroll to the top of the page
   window.scrollTo({ top: 0, behavior: "smooth" });
+
   next();
 });
 

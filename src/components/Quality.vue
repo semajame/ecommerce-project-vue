@@ -29,7 +29,7 @@
         to="/contacts"
         class="no-underline text-white font-medium bg-[#222] py-4 px-8 rounded-md hover:bg-[#508648] transition ease-in-out"
       >
-        Learn More</router-link
+        Contact Greenery</router-link
       >
     </div>
   </section>

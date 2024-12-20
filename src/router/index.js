@@ -18,25 +18,49 @@ const router = createRouter({
       path: "/shop",
       name: "Shop",
       component: Shop,
-      meta: { title: "Shop - Greenery Ecommerce" },
+      meta: {
+        title: "Shop - Greenery Ecommerce",
+        name: "description",
+        hid: "description",
+        content:
+          "Explore shop page, where plants are displayed it's name and price.",
+      },
     },
     {
       path: "/contacts",
       name: "Contacts",
       component: Contacts,
-      meta: { title: "Contacts - Greenery Ecommerce" },
+      meta: {
+        title: "Contacts - Greenery Ecommerce",
+        name: "description",
+        hid: "description",
+        content:
+          "Explore contact page, where opening hours and contact form are displayed.",
+      },
     },
     {
       path: "/cart",
       name: "Cart",
       component: Cart,
-      meta: { title: "Cart - Greenery Ecommerce" },
+      meta: {
+        title: "Cart - Greenery Ecommerce",
+        name: "description",
+        hid: "description",
+        content:
+          "Explore cart page, where your added plants are, here displays the total price, quantity and shipping informations.",
+      },
     },
     {
       path: "/shop/:name",
       name: "ProductDetail",
       component: ProductDetail,
-      meta: { title: (route) => `${route.params.name} - Greenery Ecommerce` },
+      meta: {
+        title: (route) => `${route.params.name} - Greenery Ecommerce`,
+        name: "description",
+        hid: "description",
+        content:
+          "Explore plant detail, the information of the plant is displayed.",
+      },
     },
     {
       path: "/:pathMatch(.*)*",

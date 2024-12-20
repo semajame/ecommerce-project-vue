@@ -80,7 +80,7 @@
       </div>
     </div>
   </main>
-  <section class="pb-[7rem]" v-motion-slide-visible-bottom>
+  <section class="pb-[7rem] mt-10" v-motion-slide-visible-bottom>
     <h2
       class="text-center header2 text-[#222] font-medium tracking-tighter mb-[2rem]"
     >
@@ -95,19 +95,19 @@
           <input
             type="text"
             placeholder="Name"
-            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none"
+            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none text-white"
           />
           <input
             type="email"
             name=""
             id=""
             placeholder="Email"
-            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none"
+            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none text-white"
           />
           <input
             type="text"
             placeholder="Phone"
-            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none"
+            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none text-white"
           />
         </div>
 
@@ -117,7 +117,7 @@
           cols="30"
           rows="10"
           placeholder="Example text"
-          class="w-full border border-gray-300 rounded-md focus:border-gray-500 outline-none p-[2rem]"
+          class="w-full border border-gray-300 rounded-md focus:border-gray-500 outline-none p-[2rem] text-white"
         ></textarea>
 
         <div class="flex justify-center">

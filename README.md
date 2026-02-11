@@ -18,8 +18,8 @@ A modern and responsive **plant shopping frontend UI** where users can browse pl
 ## 🛠 Tech Stack
 
 * **Framework:** (Vue)
-* **Styling** (Tailwind)
-* **Other Tools** (Vercel / Vite)
+* **Styling:** (Tailwind)
+* **Other Tools:** (Vercel / Vite)
 
 ---
 

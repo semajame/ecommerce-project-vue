@@ -11,7 +11,7 @@ A modern and responsive **plant shopping frontend UI** where users can browse pl
 * View cart items and quantities
 * Responsive design for desktop and mobile
 * Clean and modern UI layout
-* Smooth animations and interactions (if applicable)
+* Smooth animations and interactions
 
 ---
 

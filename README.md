@@ -17,7 +17,9 @@ A modern and responsive **plant shopping frontend UI** where users can browse pl
 
 ## 🛠 Tech Stack
 
-* **Framework:** (e.g., Vue / Tailwind / Vercel, Vite)
+* **Framework:** (Vue)
+* **Styling** (Tailwind)
+* **Other Tools** (Vercel / Vite)
 
 ---
 

@@ -1,4 +1,4 @@
-## 🌿 Plant Shop Frontend Project
+## 🌿 The Greenery - Ecommerce 
 
 A modern and responsive **plant shopping frontend UI** where users can browse plants and add them to a cart. This project focuses on clean design, smooth interactions, and a great user experience. It is a **frontend-only** application with no backend integration.
 

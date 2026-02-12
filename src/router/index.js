@@ -5,6 +5,7 @@ import Contacts from "../views/Contacts.vue";
 import Cart from "../views/Cart.vue";
 import NotFound from "../views/NotFound.vue";
 import ProductDetail from "../views/ProductDetail.vue";
+import Checkout from "../views/Checkout.vue";
 
 const router = createRouter({
   history: createWebHistory("/"),
@@ -47,6 +48,15 @@ const router = createRouter({
         title: "Cart - Greenery Ecommerce",
         description:
           "View your cart with added plants, total prices, quantities, and shipping information.",
+      },
+    },
+    {
+      path: "/checkout",
+      name: "Checkout",
+      component: Checkout,
+      meta: {
+        title: "Checkout - Greenery Ecommerce",
+        description: "Complete your purchase with secure checkout.",
       },
     },
     {

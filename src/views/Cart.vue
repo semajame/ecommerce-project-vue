@@ -58,13 +58,13 @@
           </span>
         </div>
 
-        <button
+        <router-link
           type="submit"
-          class="w-full bg-green-500 text-white font-bold py-[0.9rem] rounded-md"
-          @click="handleCheckout"
+          class="w-full text-center bg-green-500 text-white font-bold py-[0.9rem] rounded-md"
+          to="/checkout"
         >
           Checkout
-        </button>
+        </router-link>
       </div>
 
       <div

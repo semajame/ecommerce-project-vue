@@ -95,19 +95,19 @@
           <input
             type="text"
             placeholder="Name"
-            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none text-white"
+            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none text-black bg-white"
           />
           <input
             type="email"
             name=""
             id=""
             placeholder="Email"
-            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none text-white"
+            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none text-black bg-white"
           />
           <input
             type="text"
             placeholder="Phone"
-            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none text-white"
+            class="border p-[1rem] rounded-md border-gray-300 focus:border-gray-500 outline-none text-black bg-white"
           />
         </div>
 
@@ -117,7 +117,7 @@
           cols="30"
           rows="10"
           placeholder="Example text"
-          class="w-full border border-gray-300 rounded-md focus:border-gray-500 outline-none p-[2rem] text-white"
+          class="w-full border border-gray-300 rounded-md focus:border-gray-500 bg-white outline-none p-[2rem] text-black"
         ></textarea>
 
         <div class="flex justify-center">

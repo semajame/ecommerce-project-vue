@@ -126,7 +126,8 @@
 
           <button
             type="submit"
-            class="w-full mt-10 bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition"
+            :disabled="cart.length === 0"
+            class="w-full mt-10 bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-green-600"
           >
             Confirm Purchase
           </button>

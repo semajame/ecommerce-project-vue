@@ -1,103 +1,178 @@
 <template>
-  <div class="checkout-container">
-    <div class="payment-section">
-      <h2 class="my-5 text-lg font-bold">Payment Details</h2>
+  <div class="checkout-container max-w-7xl mx-auto px-4 py-8">
+    <div class="flex flex-col lg:flex-row gap-10">
+      <!-- ================= PAYMENT SECTION ================= -->
+      <div class="payment-section flex-1">
+        <h1 class="text-2xl font-bold mb-6">Billing Details</h1>
 
-      <div class="card-visual">
-        <div class="card-chip"></div>
-        <div class="card-number">
-          {{ card.number || "#### #### #### ####" }}
-        </div>
-        <div class="card-bottom">
-          <div class="card-holder">
-            <label>Card Holder</label>
-            <div>{{ card.name || "FULL NAME" }}</div>
-          </div>
-          <div class="card-expiry">
-            <label>Expires</label>
-            <div>{{ card.expiry || "MM/YY" }}</div>
-          </div>
-        </div>
-      </div>
-
-      <form class="payment-form" @submit.prevent="handleCheckout">
-        <div class="input-group">
-          <label>Card Name</label>
-          <input
-            v-model="card.name"
-            type="text"
-            placeholder="John Doe"
-            class="bg-white"
-            required
-          />
-        </div>
-        <div class="input-group">
-          <label>Card Number</label>
-          <input
-            v-model="card.number"
-            type="text"
-            placeholder="0000 0000 0000 0000"
-            maxlength="19"
-            class="bg-white"
-            required
-          />
-        </div>
-        <div class="row">
-          <div class="input-group">
-            <label>Expiration (MM/YY)</label>
+        <!-- First + Last Name -->
+        <div class="flex flex-col sm:flex-row gap-4 w-full">
+          <div class="space-y-1 flex-1">
+            <label for="first_name" class="font-bold">First Name</label>
             <input
-              v-model="card.expiry"
               type="text"
-              class="bg-white"
-              placeholder="01/26"
-              maxlength="5"
-              required
+              id="first_name"
+              v-model="card.firstName"
+              class="w-full bg-white border border-gray-300 rounded-md py-2 px-3"
             />
           </div>
-          <div class="input-group">
-            <label>CVV</label>
+
+          <div class="space-y-1 flex-1">
+            <label for="last_name" class="font-bold">Last Name</label>
             <input
-              v-model="card.cvv"
-              class="bg-white"
               type="text"
-              placeholder="123"
-              maxlength="3"
-              required
+              id="last_name"
+              v-model="card.lastName"
+              class="w-full bg-white border border-gray-300 rounded-md py-2 px-3"
             />
           </div>
         </div>
-        <button type="submit" class="checkout-btn">
-          Confirm Purchase (${{ totalAmount }})
-        </button>
-      </form>
-    </div>
 
-    <div class="summary-section">
-      <h2 class="my-5 text-lg font-bold">Your Greenery</h2>
-      <div v-if="cart.length === 0" class="empty-cart">
-        Your cart is empty. Time to adopt some plants!
-      </div>
-      <div v-else class="cart-items">
-        <div v-for="item in cart" :key="item.productId" class="cart-item">
-          <img
-            :src="item.productImage"
-            :alt="item.productName"
-            class="product-img"
+        <!-- Email -->
+        <div class="mt-4 space-y-1">
+          <label for="email" class="font-bold">Email</label>
+          <input
+            type="email"
+            id="email"
+            v-model="card.email"
+            class="w-full bg-white border border-gray-300 rounded-md py-2 px-3"
           />
-          <div class="product-info">
-            <h3>{{ item.productName }}</h3>
-            <p>Qty: {{ item.productQuantity }}</p>
+        </div>
+
+        <!-- State + Postal -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+          <div class="space-y-1">
+            <label for="state" class="font-bold">State / County</label>
+            <input
+              type="text"
+              id="state"
+              v-model="card.state"
+              class="w-full bg-white border border-gray-300 rounded-md py-2 px-3"
+            />
           </div>
-          <div class="product-price">
-            ${{ (item.productPrice * item.productQuantity).toFixed(2) }}
+
+          <div class="space-y-1">
+            <label for="postal_code" class="font-bold">Zip / Postal Code</label>
+            <input
+              type="text"
+              id="postal_code"
+              v-model="card.postalCode"
+              class="w-full bg-white border border-gray-300 rounded-md py-2 px-3"
+            />
           </div>
         </div>
 
-        <hr />
+        <!-- ================= PAYMENT METHOD ================= -->
+        <h2 class="mt-10 mb-5 text-lg font-bold">Payment Method</h2>
 
-        <div class="total-row">
-          <span>Total</span>
-          <span class="total-price">${{ totalAmount }}</span>
+        <!-- Card Visual -->
+        <div class="card-visual">
+          <div class="card-chip"></div>
+          <div class="card-number">
+            {{ card.number || "#### #### #### ####" }}
+          </div>
+          <div class="card-bottom">
+            <div class="card-expiry">
+              <label>Expires</label>
+              <div>{{ card.expiry || "MM/YY" }}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Form -->
+        <form class="space-y-4" @submit.prevent="handleCheckout">
+          <div class="space-y-1">
+            <label class="font-bold" for="card-number">Card Number</label>
+            <input
+              v-model="card.number"
+              type="text"
+              id="card-number"
+              placeholder="0000 0000 0000 0000"
+              maxlength="19"
+              class="w-full bg-white border border-gray-300 rounded-md py-2 px-3"
+              required
+            />
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <div class="space-y-1 flex-1">
+              <label class="font-bold" for="expiration"
+                >Expiration (MM/YY)</label
+              >
+              <input
+                v-model="card.expiry"
+                type="text"
+                id="expiration"
+                placeholder="01/26"
+                maxlength="5"
+                class="w-full bg-white border border-gray-300 rounded-md py-2 px-3"
+                required
+              />
+            </div>
+
+            <div class="space-y-1 flex-1">
+              <label class="font-bold" for="cvv">CVV</label>
+              <input
+                v-model="card.cvv"
+                type="text"
+                id="cvv"
+                placeholder="123"
+                maxlength="3"
+                class="w-full bg-white border border-gray-300 rounded-md py-2 px-3"
+                required
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full mt-10 bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition"
+          >
+            Confirm Purchase
+          </button>
+        </form>
+      </div>
+
+      <!-- ================= SUMMARY SECTION ================= -->
+      <div
+        class="summary-section w-full lg:w-[400px] bg-gray-50 p-6 rounded-xl h-fit shadow-sm"
+      >
+        <h2 class="text-lg font-bold mb-5">Your Greenery</h2>
+
+        <div v-if="cart.length === 0" class="text-gray-500">
+          Your cart is empty. Time to adopt some plants!
+        </div>
+
+        <div v-else class="space-y-4">
+          <div
+            v-for="item in cart"
+            :key="item.productId"
+            class="flex items-center gap-4"
+          >
+            <img
+              :src="item.productImage"
+              :alt="item.productName"
+              class="w-16 h-16 object-cover rounded-lg"
+            />
+
+            <div class="flex-1">
+              <h3 class="font-semibold">{{ item.productName }}</h3>
+              <p class="text-sm text-gray-500">
+                Qty: {{ item.productQuantity }}
+              </p>
+            </div>
+
+            <div class="font-bold">
+              ${{ (item.productPrice * item.productQuantity).toFixed(2) }}
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="flex justify-between font-bold text-lg pt-2">
+            <span>Total</span>
+            <span>${{ totalAmount }}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -153,7 +228,7 @@ const handleCheckout = () => {
 
 .card-visual {
   width: 100%;
-  height: 200px;
+  height: 235px;
   background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
   border-radius: 15px;
   padding: 25px;
